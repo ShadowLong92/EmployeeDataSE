@@ -22,47 +22,58 @@ Partial Class frmMainWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
+        Me.menuBar = New System.Windows.Forms.MenuStrip()
+        Me.tsmiFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'menuBar
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1016, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.menuBar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile})
+        Me.menuBar.Location = New System.Drawing.Point(0, 0)
+        Me.menuBar.Name = "menuBar"
+        Me.menuBar.Size = New System.Drawing.Size(1016, 24)
+        Me.menuBar.TabIndex = 1
+        Me.menuBar.Text = "menu"
         '
-        'FileToolStripMenuItem
+        'tsmiFile
         '
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
-        Me.FileToolStripMenuItem.Text = "&File"
+        Me.tsmiFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiExit})
+        Me.tsmiFile.Name = "tsmiFile"
+        Me.tsmiFile.Size = New System.Drawing.Size(35, 20)
+        Me.tsmiFile.Text = "&File"
+        '
+        'tsmiExit
+        '
+        Me.tsmiExit.Name = "tsmiExit"
+        Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
+        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Text = "&Exit"
         '
         'frmMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1016, 573)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.menuBar)
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.menuBar
         Me.MinimumSize = New System.Drawing.Size(1024, 600)
         Me.Name = "frmMainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Data SE"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.menuBar.ResumeLayout(False)
+        Me.menuBar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menuBar As System.Windows.Forms.MenuStrip
+    Friend WithEvents tsmiFile As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
 
 End Class
