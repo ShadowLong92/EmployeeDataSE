@@ -25,13 +25,14 @@ Partial Class frmMainWindow
         Me.menuBar = New System.Windows.Forms.MenuStrip()
         Me.tsmiFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuBar
         '
         Me.menuBar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile})
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile, Me.tsmiEdit})
         Me.menuBar.Location = New System.Drawing.Point(0, 0)
         Me.menuBar.Name = "menuBar"
         Me.menuBar.Size = New System.Drawing.Size(1016, 24)
@@ -49,8 +50,14 @@ Partial Class frmMainWindow
         '
         Me.tsmiExit.Name = "tsmiExit"
         Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(132, 22)
         Me.tsmiExit.Text = "&Exit"
+        '
+        'tsmiEdit
+        '
+        Me.tsmiEdit.Name = "tsmiEdit"
+        Me.tsmiEdit.Size = New System.Drawing.Size(37, 20)
+        Me.tsmiEdit.Text = "&Edit"
         '
         'frmMainWindow
         '
@@ -75,5 +82,6 @@ Partial Class frmMainWindow
     Friend WithEvents menuBar As System.Windows.Forms.MenuStrip
     Friend WithEvents tsmiFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiEdit As System.Windows.Forms.ToolStripMenuItem
 
 End Class
