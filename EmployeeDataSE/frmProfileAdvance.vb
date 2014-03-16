@@ -7,6 +7,12 @@
         Me.Icon = My.Resources.user
         BindingNavigatorAddNewItem.PerformClick()
         TimeAutoFetch.Start()
+        With PilihanUmurPersaraanComboBox.Items
+            .Add("50")
+            .Add("58")
+            .Add("60")
+        End With
+
     End Sub
 
     Private Sub ProfileAdvanceBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileAdvanceBindingNavigatorSaveItem.Click
@@ -34,5 +40,9 @@
         Catch ex As Exception
             MessageBox.Show("Tidak sah!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
+    End Sub
+
+    Private Sub PilihanUmurPersaraanComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PilihanUmurPersaraanComboBox.SelectedIndexChanged
+        TarikhPersaraanWajibDateTimePicker.Value = New Date(Now.Year + Integer.Parse(PilihanUmurPersaraanComboBox.Text) - Age, TarikhPengesahanLantikanDateTimePicker.Value.Month, TarikhPengesahanLantikanDateTimePicker.Value.Day)
     End Sub
 End Class

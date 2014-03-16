@@ -17,10 +17,39 @@
         Do Until SID = IDTextBox.Text
             BindingNavigatorMoveNextItem.PerformClick()
         Loop
+
+        With JantinaComboBox.Items
+            .Add(Choose)
+            .Add("Lelaki")
+            .Add("Perempuan")
+        End With
+        With AgamaComboBox.Items
+            .Add(Choose)
+            .Add("Islam")
+            .Add("Buddha")
+            .Add("Hindu")
+            .Add("Kristian")
+            .Add("Lain-lain")
+        End With
+        With KelayakanComboBox.Items
+            .Add(Choose)
+            .Add("SPM")
+            .Add("Diploma")
+            .Add("Ijazah")
+            .Add("Master")
+            .Add("PhD")
+        End With
+
     End Sub
 
     Private Sub btnUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdate.Click
+        If JantinaComboBox.SelectedIndex <= 0 Or AgamaComboBox.SelectedIndex <= 0 Then
+            MessageBox.Show("Maklumat tidak lengkap!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
         ProfileBasicBindingNavigatorSaveItem.PerformClick()
+
     End Sub
 
     Private Sub btnNext_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNext.Click

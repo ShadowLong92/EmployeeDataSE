@@ -2,6 +2,7 @@
     Public UID As Integer = 1
     Public Choose As String = "Sila Pilih..."
     Public SID As String = ""
+    Public Age As Integer = 0
 
     ' Var Profile Basic
     Public Id As String

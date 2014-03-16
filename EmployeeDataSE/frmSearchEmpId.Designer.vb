@@ -108,12 +108,13 @@ Partial Class frmSearchEmpId
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(300, 21)
         Me.txtId.TabIndex = 7
+        Me.txtId.Text = "1"
         '
         'frmSearchEmpId
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(624, 442)
+        Me.ClientSize = New System.Drawing.Size(632, 453)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.lstName)

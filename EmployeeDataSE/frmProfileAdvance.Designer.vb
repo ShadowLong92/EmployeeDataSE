@@ -23,7 +23,6 @@ Partial Class frmProfileAdvance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileAdvance))
         Dim IDLabel As System.Windows.Forms.Label
         Dim StatusLabel As System.Windows.Forms.Label
         Dim TarikhDilantikLabel As System.Windows.Forms.Label
@@ -36,22 +35,23 @@ Partial Class frmProfileAdvance
         Dim APCLabel As System.Windows.Forms.Label
         Dim TindakkanTatatertibLabel As System.Windows.Forms.Label
         Dim SejarahLantikanLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileAdvance))
         Me.EmployeeDataSEDS = New EmployeeDataSE.EmployeeDataSEDS()
         Me.ProfileAdvanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProfileAdvanceTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.ProfileAdvanceTableAdapter()
         Me.TableAdapterManager = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager()
         Me.ProfileAdvanceBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ProfileAdvanceBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.StatusTextBox = New System.Windows.Forms.TextBox()
@@ -84,6 +84,126 @@ Partial Class frmProfileAdvance
         CType(Me.ProfileAdvanceBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfileAdvanceBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'IDLabel
+        '
+        IDLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        IDLabel.AutoSize = True
+        IDLabel.Location = New System.Drawing.Point(38, 80)
+        IDLabel.Name = "IDLabel"
+        IDLabel.Size = New System.Drawing.Size(22, 13)
+        IDLabel.TabIndex = 1
+        IDLabel.Text = "ID:"
+        '
+        'StatusLabel
+        '
+        StatusLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        StatusLabel.AutoSize = True
+        StatusLabel.Location = New System.Drawing.Point(38, 107)
+        StatusLabel.Name = "StatusLabel"
+        StatusLabel.Size = New System.Drawing.Size(42, 13)
+        StatusLabel.TabIndex = 3
+        StatusLabel.Text = "Status:"
+        '
+        'TarikhDilantikLabel
+        '
+        TarikhDilantikLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TarikhDilantikLabel.AutoSize = True
+        TarikhDilantikLabel.Location = New System.Drawing.Point(38, 135)
+        TarikhDilantikLabel.Name = "TarikhDilantikLabel"
+        TarikhDilantikLabel.Size = New System.Drawing.Size(77, 13)
+        TarikhDilantikLabel.TabIndex = 5
+        TarikhDilantikLabel.Text = "Tarikh Dilantik:"
+        '
+        'TarikhPengesahanLantikanLabel
+        '
+        TarikhPengesahanLantikanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TarikhPengesahanLantikanLabel.AutoSize = True
+        TarikhPengesahanLantikanLabel.Location = New System.Drawing.Point(38, 162)
+        TarikhPengesahanLantikanLabel.Name = "TarikhPengesahanLantikanLabel"
+        TarikhPengesahanLantikanLabel.Size = New System.Drawing.Size(145, 13)
+        TarikhPengesahanLantikanLabel.TabIndex = 7
+        TarikhPengesahanLantikanLabel.Text = "Tarikh Pengesahan Lantikan:"
+        '
+        'DisahkanDalamJawatanLabel
+        '
+        DisahkanDalamJawatanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        DisahkanDalamJawatanLabel.AutoSize = True
+        DisahkanDalamJawatanLabel.Location = New System.Drawing.Point(38, 188)
+        DisahkanDalamJawatanLabel.Name = "DisahkanDalamJawatanLabel"
+        DisahkanDalamJawatanLabel.Size = New System.Drawing.Size(130, 13)
+        DisahkanDalamJawatanLabel.TabIndex = 9
+        DisahkanDalamJawatanLabel.Text = "Disahkan Dalam Jawatan:"
+        '
+        'PilihanUmurPersaraanLabel
+        '
+        PilihanUmurPersaraanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        PilihanUmurPersaraanLabel.AutoSize = True
+        PilihanUmurPersaraanLabel.Location = New System.Drawing.Point(38, 215)
+        PilihanUmurPersaraanLabel.Name = "PilihanUmurPersaraanLabel"
+        PilihanUmurPersaraanLabel.Size = New System.Drawing.Size(121, 13)
+        PilihanUmurPersaraanLabel.TabIndex = 11
+        PilihanUmurPersaraanLabel.Text = "Pilihan Umur Persaraan:"
+        '
+        'TarikhPersaraanWajibLabel
+        '
+        TarikhPersaraanWajibLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TarikhPersaraanWajibLabel.AutoSize = True
+        TarikhPersaraanWajibLabel.Location = New System.Drawing.Point(38, 243)
+        TarikhPersaraanWajibLabel.Name = "TarikhPersaraanWajibLabel"
+        TarikhPersaraanWajibLabel.Size = New System.Drawing.Size(122, 13)
+        TarikhPersaraanWajibLabel.TabIndex = 13
+        TarikhPersaraanWajibLabel.Text = "Tarikh Persaraan Wajib:"
+        '
+        'CutiYangBerkaitanLabel
+        '
+        CutiYangBerkaitanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        CutiYangBerkaitanLabel.AutoSize = True
+        CutiYangBerkaitanLabel.Location = New System.Drawing.Point(38, 269)
+        CutiYangBerkaitanLabel.Name = "CutiYangBerkaitanLabel"
+        CutiYangBerkaitanLabel.Size = New System.Drawing.Size(105, 13)
+        CutiYangBerkaitanLabel.TabIndex = 15
+        CutiYangBerkaitanLabel.Text = "Cuti Yang Berkaitan:"
+        '
+        'KursusKursusLabel
+        '
+        KursusKursusLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        KursusKursusLabel.AutoSize = True
+        KursusKursusLabel.Location = New System.Drawing.Point(38, 329)
+        KursusKursusLabel.Name = "KursusKursusLabel"
+        KursusKursusLabel.Size = New System.Drawing.Size(78, 13)
+        KursusKursusLabel.TabIndex = 17
+        KursusKursusLabel.Text = "Kursus Kursus:"
+        '
+        'APCLabel
+        '
+        APCLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        APCLabel.AutoSize = True
+        APCLabel.Location = New System.Drawing.Point(38, 395)
+        APCLabel.Name = "APCLabel"
+        APCLabel.Size = New System.Drawing.Size(31, 13)
+        APCLabel.TabIndex = 19
+        APCLabel.Text = "APC:"
+        '
+        'TindakkanTatatertibLabel
+        '
+        TindakkanTatatertibLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TindakkanTatatertibLabel.AutoSize = True
+        TindakkanTatatertibLabel.Location = New System.Drawing.Point(395, 329)
+        TindakkanTatatertibLabel.Name = "TindakkanTatatertibLabel"
+        TindakkanTatatertibLabel.Size = New System.Drawing.Size(110, 13)
+        TindakkanTatatertibLabel.TabIndex = 21
+        TindakkanTatatertibLabel.Text = "Tindakkan Tatatertib:"
+        '
+        'SejarahLantikanLabel
+        '
+        SejarahLantikanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        SejarahLantikanLabel.AutoSize = True
+        SejarahLantikanLabel.Location = New System.Drawing.Point(395, 395)
+        SejarahLantikanLabel.Name = "SejarahLantikanLabel"
+        SejarahLantikanLabel.Size = New System.Drawing.Size(91, 13)
+        SejarahLantikanLabel.TabIndex = 23
+        SejarahLantikanLabel.Text = "Sejarah Lantikan:"
         '
         'EmployeeDataSEDS
         '
@@ -126,6 +246,31 @@ Partial Class frmProfileAdvance
         Me.ProfileAdvanceBindingNavigator.Text = "BindingNavigator1"
         Me.ProfileAdvanceBindingNavigator.Visible = False
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -158,16 +303,9 @@ Partial Class frmProfileAdvance
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -190,26 +328,8 @@ Partial Class frmProfileAdvance
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'ProfileAdvanceBindingNavigatorSaveItem
         '
@@ -219,17 +339,9 @@ Partial Class frmProfileAdvance
         Me.ProfileAdvanceBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ProfileAdvanceBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'IDLabel
-        '
-        IDLabel.AutoSize = True
-        IDLabel.Location = New System.Drawing.Point(38, 80)
-        IDLabel.Name = "IDLabel"
-        IDLabel.Size = New System.Drawing.Size(22, 13)
-        IDLabel.TabIndex = 1
-        IDLabel.Text = "ID:"
-        '
         'IDTextBox
         '
+        Me.IDTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(189, 77)
         Me.IDTextBox.Name = "IDTextBox"
@@ -237,68 +349,36 @@ Partial Class frmProfileAdvance
         Me.IDTextBox.Size = New System.Drawing.Size(100, 21)
         Me.IDTextBox.TabIndex = 2
         '
-        'StatusLabel
-        '
-        StatusLabel.AutoSize = True
-        StatusLabel.Location = New System.Drawing.Point(38, 107)
-        StatusLabel.Name = "StatusLabel"
-        StatusLabel.Size = New System.Drawing.Size(42, 13)
-        StatusLabel.TabIndex = 3
-        StatusLabel.Text = "Status:"
-        '
         'StatusTextBox
         '
+        Me.StatusTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.StatusTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "Status", True))
         Me.StatusTextBox.Location = New System.Drawing.Point(189, 104)
         Me.StatusTextBox.Name = "StatusTextBox"
         Me.StatusTextBox.Size = New System.Drawing.Size(200, 21)
         Me.StatusTextBox.TabIndex = 4
         '
-        'TarikhDilantikLabel
-        '
-        TarikhDilantikLabel.AutoSize = True
-        TarikhDilantikLabel.Location = New System.Drawing.Point(38, 135)
-        TarikhDilantikLabel.Name = "TarikhDilantikLabel"
-        TarikhDilantikLabel.Size = New System.Drawing.Size(77, 13)
-        TarikhDilantikLabel.TabIndex = 5
-        TarikhDilantikLabel.Text = "Tarikh Dilantik:"
-        '
         'TarikhDilantikDateTimePicker
         '
+        Me.TarikhDilantikDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TarikhDilantikDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProfileAdvanceBindingSource, "TarikhDilantik", True))
         Me.TarikhDilantikDateTimePicker.Location = New System.Drawing.Point(189, 131)
         Me.TarikhDilantikDateTimePicker.Name = "TarikhDilantikDateTimePicker"
         Me.TarikhDilantikDateTimePicker.Size = New System.Drawing.Size(200, 21)
         Me.TarikhDilantikDateTimePicker.TabIndex = 6
         '
-        'TarikhPengesahanLantikanLabel
-        '
-        TarikhPengesahanLantikanLabel.AutoSize = True
-        TarikhPengesahanLantikanLabel.Location = New System.Drawing.Point(38, 162)
-        TarikhPengesahanLantikanLabel.Name = "TarikhPengesahanLantikanLabel"
-        TarikhPengesahanLantikanLabel.Size = New System.Drawing.Size(145, 13)
-        TarikhPengesahanLantikanLabel.TabIndex = 7
-        TarikhPengesahanLantikanLabel.Text = "Tarikh Pengesahan Lantikan:"
-        '
         'TarikhPengesahanLantikanDateTimePicker
         '
+        Me.TarikhPengesahanLantikanDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TarikhPengesahanLantikanDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProfileAdvanceBindingSource, "TarikhPengesahanLantikan", True))
         Me.TarikhPengesahanLantikanDateTimePicker.Location = New System.Drawing.Point(189, 158)
         Me.TarikhPengesahanLantikanDateTimePicker.Name = "TarikhPengesahanLantikanDateTimePicker"
         Me.TarikhPengesahanLantikanDateTimePicker.Size = New System.Drawing.Size(200, 21)
         Me.TarikhPengesahanLantikanDateTimePicker.TabIndex = 8
         '
-        'DisahkanDalamJawatanLabel
-        '
-        DisahkanDalamJawatanLabel.AutoSize = True
-        DisahkanDalamJawatanLabel.Location = New System.Drawing.Point(38, 188)
-        DisahkanDalamJawatanLabel.Name = "DisahkanDalamJawatanLabel"
-        DisahkanDalamJawatanLabel.Size = New System.Drawing.Size(130, 13)
-        DisahkanDalamJawatanLabel.TabIndex = 9
-        DisahkanDalamJawatanLabel.Text = "Disahkan Dalam Jawatan:"
-        '
         'DisahkanDalamJawatanComboBox
         '
+        Me.DisahkanDalamJawatanComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DisahkanDalamJawatanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "DisahkanDalamJawatan", True))
         Me.DisahkanDalamJawatanComboBox.FormattingEnabled = True
         Me.DisahkanDalamJawatanComboBox.Location = New System.Drawing.Point(189, 185)
@@ -306,52 +386,29 @@ Partial Class frmProfileAdvance
         Me.DisahkanDalamJawatanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.DisahkanDalamJawatanComboBox.TabIndex = 10
         '
-        'PilihanUmurPersaraanLabel
-        '
-        PilihanUmurPersaraanLabel.AutoSize = True
-        PilihanUmurPersaraanLabel.Location = New System.Drawing.Point(38, 215)
-        PilihanUmurPersaraanLabel.Name = "PilihanUmurPersaraanLabel"
-        PilihanUmurPersaraanLabel.Size = New System.Drawing.Size(121, 13)
-        PilihanUmurPersaraanLabel.TabIndex = 11
-        PilihanUmurPersaraanLabel.Text = "Pilihan Umur Persaraan:"
-        '
         'PilihanUmurPersaraanComboBox
         '
+        Me.PilihanUmurPersaraanComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PilihanUmurPersaraanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "PilihanUmurPersaraan", True))
+        Me.PilihanUmurPersaraanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PilihanUmurPersaraanComboBox.FormattingEnabled = True
         Me.PilihanUmurPersaraanComboBox.Location = New System.Drawing.Point(189, 212)
         Me.PilihanUmurPersaraanComboBox.Name = "PilihanUmurPersaraanComboBox"
         Me.PilihanUmurPersaraanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.PilihanUmurPersaraanComboBox.TabIndex = 12
         '
-        'TarikhPersaraanWajibLabel
-        '
-        TarikhPersaraanWajibLabel.AutoSize = True
-        TarikhPersaraanWajibLabel.Location = New System.Drawing.Point(38, 243)
-        TarikhPersaraanWajibLabel.Name = "TarikhPersaraanWajibLabel"
-        TarikhPersaraanWajibLabel.Size = New System.Drawing.Size(122, 13)
-        TarikhPersaraanWajibLabel.TabIndex = 13
-        TarikhPersaraanWajibLabel.Text = "Tarikh Persaraan Wajib:"
-        '
         'TarikhPersaraanWajibDateTimePicker
         '
+        Me.TarikhPersaraanWajibDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TarikhPersaraanWajibDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProfileAdvanceBindingSource, "TarikhPersaraanWajib", True))
         Me.TarikhPersaraanWajibDateTimePicker.Location = New System.Drawing.Point(189, 239)
         Me.TarikhPersaraanWajibDateTimePicker.Name = "TarikhPersaraanWajibDateTimePicker"
         Me.TarikhPersaraanWajibDateTimePicker.Size = New System.Drawing.Size(200, 21)
         Me.TarikhPersaraanWajibDateTimePicker.TabIndex = 14
         '
-        'CutiYangBerkaitanLabel
-        '
-        CutiYangBerkaitanLabel.AutoSize = True
-        CutiYangBerkaitanLabel.Location = New System.Drawing.Point(38, 269)
-        CutiYangBerkaitanLabel.Name = "CutiYangBerkaitanLabel"
-        CutiYangBerkaitanLabel.Size = New System.Drawing.Size(105, 13)
-        CutiYangBerkaitanLabel.TabIndex = 15
-        CutiYangBerkaitanLabel.Text = "Cuti Yang Berkaitan:"
-        '
         'CutiYangBerkaitanComboBox
         '
+        Me.CutiYangBerkaitanComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CutiYangBerkaitanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "CutiYangBerkaitan", True))
         Me.CutiYangBerkaitanComboBox.FormattingEnabled = True
         Me.CutiYangBerkaitanComboBox.Location = New System.Drawing.Point(189, 266)
@@ -359,17 +416,9 @@ Partial Class frmProfileAdvance
         Me.CutiYangBerkaitanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.CutiYangBerkaitanComboBox.TabIndex = 16
         '
-        'KursusKursusLabel
-        '
-        KursusKursusLabel.AutoSize = True
-        KursusKursusLabel.Location = New System.Drawing.Point(38, 329)
-        KursusKursusLabel.Name = "KursusKursusLabel"
-        KursusKursusLabel.Size = New System.Drawing.Size(78, 13)
-        KursusKursusLabel.TabIndex = 17
-        KursusKursusLabel.Text = "Kursus Kursus:"
-        '
         'KursusKursusTextBox
         '
+        Me.KursusKursusTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.KursusKursusTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "KursusKursus", True))
         Me.KursusKursusTextBox.Location = New System.Drawing.Point(189, 326)
         Me.KursusKursusTextBox.Multiline = True
@@ -377,17 +426,9 @@ Partial Class frmProfileAdvance
         Me.KursusKursusTextBox.Size = New System.Drawing.Size(200, 60)
         Me.KursusKursusTextBox.TabIndex = 18
         '
-        'APCLabel
-        '
-        APCLabel.AutoSize = True
-        APCLabel.Location = New System.Drawing.Point(38, 395)
-        APCLabel.Name = "APCLabel"
-        APCLabel.Size = New System.Drawing.Size(31, 13)
-        APCLabel.TabIndex = 19
-        APCLabel.Text = "APC:"
-        '
         'APCTextBox
         '
+        Me.APCTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.APCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "APC", True))
         Me.APCTextBox.Location = New System.Drawing.Point(189, 392)
         Me.APCTextBox.Multiline = True
@@ -395,17 +436,9 @@ Partial Class frmProfileAdvance
         Me.APCTextBox.Size = New System.Drawing.Size(200, 60)
         Me.APCTextBox.TabIndex = 20
         '
-        'TindakkanTatatertibLabel
-        '
-        TindakkanTatatertibLabel.AutoSize = True
-        TindakkanTatatertibLabel.Location = New System.Drawing.Point(395, 329)
-        TindakkanTatatertibLabel.Name = "TindakkanTatatertibLabel"
-        TindakkanTatatertibLabel.Size = New System.Drawing.Size(110, 13)
-        TindakkanTatatertibLabel.TabIndex = 21
-        TindakkanTatatertibLabel.Text = "Tindakkan Tatatertib:"
-        '
         'TindakkanTatatertibTextBox
         '
+        Me.TindakkanTatatertibTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TindakkanTatatertibTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "TindakkanTatatertib", True))
         Me.TindakkanTatatertibTextBox.Location = New System.Drawing.Point(546, 326)
         Me.TindakkanTatatertibTextBox.Multiline = True
@@ -413,17 +446,9 @@ Partial Class frmProfileAdvance
         Me.TindakkanTatatertibTextBox.Size = New System.Drawing.Size(200, 60)
         Me.TindakkanTatatertibTextBox.TabIndex = 22
         '
-        'SejarahLantikanLabel
-        '
-        SejarahLantikanLabel.AutoSize = True
-        SejarahLantikanLabel.Location = New System.Drawing.Point(395, 395)
-        SejarahLantikanLabel.Name = "SejarahLantikanLabel"
-        SejarahLantikanLabel.Size = New System.Drawing.Size(91, 13)
-        SejarahLantikanLabel.TabIndex = 23
-        SejarahLantikanLabel.Text = "Sejarah Lantikan:"
-        '
         'SejarahLantikanTextBox
         '
+        Me.SejarahLantikanTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.SejarahLantikanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "SejarahLantikan", True))
         Me.SejarahLantikanTextBox.Location = New System.Drawing.Point(546, 392)
         Me.SejarahLantikanTextBox.Multiline = True
@@ -433,6 +458,7 @@ Partial Class frmProfileAdvance
         '
         'btnFinish
         '
+        Me.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnFinish.Location = New System.Drawing.Point(652, 527)
         Me.btnFinish.Name = "btnFinish"
         Me.btnFinish.Size = New System.Drawing.Size(120, 23)
@@ -447,7 +473,7 @@ Partial Class frmProfileAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.ClientSize = New System.Drawing.Size(792, 573)
         Me.Controls.Add(Me.btnFinish)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
@@ -478,6 +504,7 @@ Partial Class frmProfileAdvance
         Me.MaximumSize = New System.Drawing.Size(800, 600)
         Me.MinimumSize = New System.Drawing.Size(800, 600)
         Me.Name = "frmProfileAdvance"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmProfileAdvance"
         CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfileAdvanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

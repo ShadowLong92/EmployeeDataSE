@@ -53,21 +53,21 @@ Partial Class frmMainWindow
         Me.tsmiFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiExit})
         Me.tsmiFile.Name = "tsmiFile"
         Me.tsmiFile.Size = New System.Drawing.Size(35, 20)
-        Me.tsmiFile.Text = "&File"
+        Me.tsmiFile.Text = "&Fail"
         '
         'tsmiExit
         '
         Me.tsmiExit.Name = "tsmiExit"
         Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
         Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
-        Me.tsmiExit.Text = "&Exit"
+        Me.tsmiExit.Text = "&Keluar"
         '
         'tsmiWork
         '
         Me.tsmiWork.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegNewWorker, Me.KemasKiniToolStripMenuItem})
         Me.tsmiWork.Name = "tsmiWork"
-        Me.tsmiWork.Size = New System.Drawing.Size(44, 20)
-        Me.tsmiWork.Text = "&Work"
+        Me.tsmiWork.Size = New System.Drawing.Size(47, 20)
+        Me.tsmiWork.Text = "&Kerja "
         '
         'tsmiRegNewWorker
         '
@@ -87,14 +87,14 @@ Partial Class frmMainWindow
         '
         Me.tsmiHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAbout})
         Me.tsmiHelp.Name = "tsmiHelp"
-        Me.tsmiHelp.Size = New System.Drawing.Size(40, 20)
-        Me.tsmiHelp.Text = "&Help"
+        Me.tsmiHelp.Size = New System.Drawing.Size(59, 20)
+        Me.tsmiHelp.Text = "&Bantuan"
         '
         'tsmiAbout
         '
         Me.tsmiAbout.Name = "tsmiAbout"
-        Me.tsmiAbout.Size = New System.Drawing.Size(260, 22)
-        Me.tsmiAbout.Text = "&About Employee Data Standard Edition"
+        Me.tsmiAbout.Size = New System.Drawing.Size(201, 22)
+        Me.tsmiAbout.Text = "&Tentang Maklumat Pekerja"
         '
         'ssBar
         '

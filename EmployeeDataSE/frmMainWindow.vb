@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub frmMainWindow_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        Dim RageQuit = MessageBox.Show("Are you sure want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2)
+        Dim RageQuit = MessageBox.Show("Anda pasti mahu keluar?", "Logkeluar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2)
 
         If RageQuit = Windows.Forms.DialogResult.Yes Then
             frmLogin.Show()

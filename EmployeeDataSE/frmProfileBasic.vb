@@ -23,6 +23,7 @@
             Exit Sub
         End If
 
+        Age = Date.Now.Year - TarikhLahirDateTimePicker.Value.Year
         ProfileBasicBindingNavigatorSaveItem.PerformClick()
 
         Me.Close()
@@ -70,5 +71,4 @@
         TimeNewId.Stop()
 
     End Sub
-
 End Class

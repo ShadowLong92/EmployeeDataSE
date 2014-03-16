@@ -23,7 +23,6 @@ Partial Class frmProfileBasic
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileBasic))
         Dim IDLabel As System.Windows.Forms.Label
         Dim NamaPegawaiLabel As System.Windows.Forms.Label
         Dim NoJbtLabel As System.Windows.Forms.Label
@@ -37,19 +36,22 @@ Partial Class frmProfileBasic
         Dim Waris1Label As System.Windows.Forms.Label
         Dim Waris2Label As System.Windows.Forms.Label
         Dim KelayakanLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileBasic))
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ProfileBasicBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.ProfileBasicBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeDataSEDS = New EmployeeDataSE.EmployeeDataSEDS()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ProfileBasicBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.NamaPegawaiTextBox = New System.Windows.Forms.TextBox()
@@ -64,8 +66,6 @@ Partial Class frmProfileBasic
         Me.Waris1TextBox = New System.Windows.Forms.TextBox()
         Me.Waris2TextBox = New System.Windows.Forms.TextBox()
         Me.KelayakanComboBox = New System.Windows.Forms.ComboBox()
-        Me.ProfileBasicBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeDataSEDS = New EmployeeDataSE.EmployeeDataSEDS()
         Me.ProfileBasicTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.ProfileBasicTableAdapter()
         Me.TableAdapterManager = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager()
         Me.TimeNewId = New System.Windows.Forms.Timer(Me.components)
@@ -87,6 +87,136 @@ Partial Class frmProfileBasic
         CType(Me.ProfileBasicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'IDLabel
+        '
+        IDLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        IDLabel.AutoSize = True
+        IDLabel.Location = New System.Drawing.Point(100, 120)
+        IDLabel.Name = "IDLabel"
+        IDLabel.Size = New System.Drawing.Size(22, 13)
+        IDLabel.TabIndex = 2
+        IDLabel.Text = "ID:"
+        '
+        'NamaPegawaiLabel
+        '
+        NamaPegawaiLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        NamaPegawaiLabel.AutoSize = True
+        NamaPegawaiLabel.Location = New System.Drawing.Point(100, 147)
+        NamaPegawaiLabel.Name = "NamaPegawaiLabel"
+        NamaPegawaiLabel.Size = New System.Drawing.Size(81, 13)
+        NamaPegawaiLabel.TabIndex = 4
+        NamaPegawaiLabel.Text = "Nama Pegawai:"
+        '
+        'NoJbtLabel
+        '
+        NoJbtLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        NoJbtLabel.AutoSize = True
+        NoJbtLabel.Location = New System.Drawing.Point(100, 174)
+        NoJbtLabel.Name = "NoJbtLabel"
+        NoJbtLabel.Size = New System.Drawing.Size(66, 13)
+        NoJbtLabel.TabIndex = 6
+        NoJbtLabel.Text = "No Jabatan:"
+        '
+        'NoPengenalanLabel
+        '
+        NoPengenalanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        NoPengenalanLabel.AutoSize = True
+        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
+        NoPengenalanLabel.Name = "NoPengenalanLabel"
+        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
+        NoPengenalanLabel.TabIndex = 8
+        NoPengenalanLabel.Text = "No Pengenalan:"
+        '
+        'NoKWSPLabel
+        '
+        NoKWSPLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        NoKWSPLabel.AutoSize = True
+        NoKWSPLabel.Location = New System.Drawing.Point(100, 228)
+        NoKWSPLabel.Name = "NoKWSPLabel"
+        NoKWSPLabel.Size = New System.Drawing.Size(55, 13)
+        NoKWSPLabel.TabIndex = 10
+        NoKWSPLabel.Text = "No KWSP:"
+        '
+        'TarikhLahirLabel
+        '
+        TarikhLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TarikhLahirLabel.AutoSize = True
+        TarikhLahirLabel.Location = New System.Drawing.Point(100, 256)
+        TarikhLahirLabel.Name = "TarikhLahirLabel"
+        TarikhLahirLabel.Size = New System.Drawing.Size(66, 13)
+        TarikhLahirLabel.TabIndex = 12
+        TarikhLahirLabel.Text = "Tarikh Lahir:"
+        '
+        'TempatLahirLabel
+        '
+        TempatLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        TempatLahirLabel.AutoSize = True
+        TempatLahirLabel.Location = New System.Drawing.Point(100, 282)
+        TempatLahirLabel.Name = "TempatLahirLabel"
+        TempatLahirLabel.Size = New System.Drawing.Size(73, 13)
+        TempatLahirLabel.TabIndex = 14
+        TempatLahirLabel.Text = "Tempat Lahir:"
+        '
+        'AlamatRumahLabel
+        '
+        AlamatRumahLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        AlamatRumahLabel.AutoSize = True
+        AlamatRumahLabel.Location = New System.Drawing.Point(100, 368)
+        AlamatRumahLabel.Name = "AlamatRumahLabel"
+        AlamatRumahLabel.Size = New System.Drawing.Size(80, 13)
+        AlamatRumahLabel.TabIndex = 16
+        AlamatRumahLabel.Text = "Alamat Rumah:"
+        '
+        'JantinaLabel
+        '
+        JantinaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        JantinaLabel.AutoSize = True
+        JantinaLabel.Location = New System.Drawing.Point(395, 147)
+        JantinaLabel.Name = "JantinaLabel"
+        JantinaLabel.Size = New System.Drawing.Size(46, 13)
+        JantinaLabel.TabIndex = 18
+        JantinaLabel.Text = "Jantina:"
+        '
+        'AgamaLabel
+        '
+        AgamaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        AgamaLabel.AutoSize = True
+        AgamaLabel.Location = New System.Drawing.Point(395, 174)
+        AgamaLabel.Name = "AgamaLabel"
+        AgamaLabel.Size = New System.Drawing.Size(44, 13)
+        AgamaLabel.TabIndex = 20
+        AgamaLabel.Text = "Agama:"
+        '
+        'Waris1Label
+        '
+        Waris1Label.Anchor = System.Windows.Forms.AnchorStyles.None
+        Waris1Label.AutoSize = True
+        Waris1Label.Location = New System.Drawing.Point(395, 201)
+        Waris1Label.Name = "Waris1Label"
+        Waris1Label.Size = New System.Drawing.Size(47, 13)
+        Waris1Label.TabIndex = 22
+        Waris1Label.Text = "Waris 1:"
+        '
+        'Waris2Label
+        '
+        Waris2Label.Anchor = System.Windows.Forms.AnchorStyles.None
+        Waris2Label.AutoSize = True
+        Waris2Label.Location = New System.Drawing.Point(395, 228)
+        Waris2Label.Name = "Waris2Label"
+        Waris2Label.Size = New System.Drawing.Size(47, 13)
+        Waris2Label.TabIndex = 24
+        Waris2Label.Text = "Waris 2:"
+        '
+        'KelayakanLabel
+        '
+        KelayakanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        KelayakanLabel.AutoSize = True
+        KelayakanLabel.Location = New System.Drawing.Point(395, 255)
+        KelayakanLabel.Name = "KelayakanLabel"
+        KelayakanLabel.Size = New System.Drawing.Size(60, 13)
+        KelayakanLabel.TabIndex = 26
+        KelayakanLabel.Text = "Kelayakan:"
         '
         'btnNext
         '
@@ -116,6 +246,41 @@ Partial Class frmProfileBasic
         Me.ProfileBasicBindingNavigator.TabIndex = 1
         Me.ProfileBasicBindingNavigator.Text = "BindingNavigator1"
         Me.ProfileBasicBindingNavigator.Visible = False
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'ProfileBasicBindingSource
+        '
+        Me.ProfileBasicBindingSource.DataMember = "ProfileBasic"
+        Me.ProfileBasicBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'EmployeeDataSEDS
+        '
+        Me.EmployeeDataSEDS.DataSetName = "EmployeeDataSEDS"
+        Me.EmployeeDataSEDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -149,16 +314,9 @@ Partial Class frmProfileBasic
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -181,26 +339,8 @@ Partial Class frmProfileBasic
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'ProfileBasicBindingNavigatorSaveItem
         '
@@ -209,16 +349,6 @@ Partial Class frmProfileBasic
         Me.ProfileBasicBindingNavigatorSaveItem.Name = "ProfileBasicBindingNavigatorSaveItem"
         Me.ProfileBasicBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ProfileBasicBindingNavigatorSaveItem.Text = "Save Data"
-        '
-        'IDLabel
-        '
-        IDLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        IDLabel.AutoSize = True
-        IDLabel.Location = New System.Drawing.Point(100, 120)
-        IDLabel.Name = "IDLabel"
-        IDLabel.Size = New System.Drawing.Size(22, 13)
-        IDLabel.TabIndex = 2
-        IDLabel.Text = "ID:"
         '
         'IDTextBox
         '
@@ -230,16 +360,6 @@ Partial Class frmProfileBasic
         Me.IDTextBox.Size = New System.Drawing.Size(100, 21)
         Me.IDTextBox.TabIndex = 3
         '
-        'NamaPegawaiLabel
-        '
-        NamaPegawaiLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        NamaPegawaiLabel.AutoSize = True
-        NamaPegawaiLabel.Location = New System.Drawing.Point(100, 147)
-        NamaPegawaiLabel.Name = "NamaPegawaiLabel"
-        NamaPegawaiLabel.Size = New System.Drawing.Size(81, 13)
-        NamaPegawaiLabel.TabIndex = 4
-        NamaPegawaiLabel.Text = "Nama Pegawai:"
-        '
         'NamaPegawaiTextBox
         '
         Me.NamaPegawaiTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -248,16 +368,6 @@ Partial Class frmProfileBasic
         Me.NamaPegawaiTextBox.Name = "NamaPegawaiTextBox"
         Me.NamaPegawaiTextBox.Size = New System.Drawing.Size(200, 21)
         Me.NamaPegawaiTextBox.TabIndex = 5
-        '
-        'NoJbtLabel
-        '
-        NoJbtLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        NoJbtLabel.AutoSize = True
-        NoJbtLabel.Location = New System.Drawing.Point(100, 174)
-        NoJbtLabel.Name = "NoJbtLabel"
-        NoJbtLabel.Size = New System.Drawing.Size(42, 13)
-        NoJbtLabel.TabIndex = 6
-        NoJbtLabel.Text = "No Jbt:"
         '
         'NoJbtTextBox
         '
@@ -268,16 +378,6 @@ Partial Class frmProfileBasic
         Me.NoJbtTextBox.Size = New System.Drawing.Size(200, 21)
         Me.NoJbtTextBox.TabIndex = 7
         '
-        'NoPengenalanLabel
-        '
-        NoPengenalanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        NoPengenalanLabel.AutoSize = True
-        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
-        NoPengenalanLabel.Name = "NoPengenalanLabel"
-        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
-        NoPengenalanLabel.TabIndex = 8
-        NoPengenalanLabel.Text = "No Pengenalan:"
-        '
         'NoPengenalanTextBox
         '
         Me.NoPengenalanTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -286,16 +386,6 @@ Partial Class frmProfileBasic
         Me.NoPengenalanTextBox.Name = "NoPengenalanTextBox"
         Me.NoPengenalanTextBox.Size = New System.Drawing.Size(200, 21)
         Me.NoPengenalanTextBox.TabIndex = 9
-        '
-        'NoKWSPLabel
-        '
-        NoKWSPLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        NoKWSPLabel.AutoSize = True
-        NoKWSPLabel.Location = New System.Drawing.Point(100, 228)
-        NoKWSPLabel.Name = "NoKWSPLabel"
-        NoKWSPLabel.Size = New System.Drawing.Size(55, 13)
-        NoKWSPLabel.TabIndex = 10
-        NoKWSPLabel.Text = "No KWSP:"
         '
         'NoKWSPTextBox
         '
@@ -306,16 +396,6 @@ Partial Class frmProfileBasic
         Me.NoKWSPTextBox.Size = New System.Drawing.Size(200, 21)
         Me.NoKWSPTextBox.TabIndex = 11
         '
-        'TarikhLahirLabel
-        '
-        TarikhLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        TarikhLahirLabel.AutoSize = True
-        TarikhLahirLabel.Location = New System.Drawing.Point(100, 256)
-        TarikhLahirLabel.Name = "TarikhLahirLabel"
-        TarikhLahirLabel.Size = New System.Drawing.Size(66, 13)
-        TarikhLahirLabel.TabIndex = 12
-        TarikhLahirLabel.Text = "Tarikh Lahir:"
-        '
         'TarikhLahirDateTimePicker
         '
         Me.TarikhLahirDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -324,16 +404,6 @@ Partial Class frmProfileBasic
         Me.TarikhLahirDateTimePicker.Name = "TarikhLahirDateTimePicker"
         Me.TarikhLahirDateTimePicker.Size = New System.Drawing.Size(200, 21)
         Me.TarikhLahirDateTimePicker.TabIndex = 13
-        '
-        'TempatLahirLabel
-        '
-        TempatLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        TempatLahirLabel.AutoSize = True
-        TempatLahirLabel.Location = New System.Drawing.Point(100, 282)
-        TempatLahirLabel.Name = "TempatLahirLabel"
-        TempatLahirLabel.Size = New System.Drawing.Size(73, 13)
-        TempatLahirLabel.TabIndex = 14
-        TempatLahirLabel.Text = "Tempat Lahir:"
         '
         'TempatLahirTextBox
         '
@@ -345,16 +415,6 @@ Partial Class frmProfileBasic
         Me.TempatLahirTextBox.Size = New System.Drawing.Size(495, 80)
         Me.TempatLahirTextBox.TabIndex = 15
         '
-        'AlamatRumahLabel
-        '
-        AlamatRumahLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        AlamatRumahLabel.AutoSize = True
-        AlamatRumahLabel.Location = New System.Drawing.Point(100, 368)
-        AlamatRumahLabel.Name = "AlamatRumahLabel"
-        AlamatRumahLabel.Size = New System.Drawing.Size(80, 13)
-        AlamatRumahLabel.TabIndex = 16
-        AlamatRumahLabel.Text = "Alamat Rumah:"
-        '
         'AlamatRumahTextBox
         '
         Me.AlamatRumahTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -364,16 +424,6 @@ Partial Class frmProfileBasic
         Me.AlamatRumahTextBox.Name = "AlamatRumahTextBox"
         Me.AlamatRumahTextBox.Size = New System.Drawing.Size(495, 80)
         Me.AlamatRumahTextBox.TabIndex = 17
-        '
-        'JantinaLabel
-        '
-        JantinaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        JantinaLabel.AutoSize = True
-        JantinaLabel.Location = New System.Drawing.Point(395, 147)
-        JantinaLabel.Name = "JantinaLabel"
-        JantinaLabel.Size = New System.Drawing.Size(46, 13)
-        JantinaLabel.TabIndex = 18
-        JantinaLabel.Text = "Jantina:"
         '
         'JantinaComboBox
         '
@@ -386,16 +436,6 @@ Partial Class frmProfileBasic
         Me.JantinaComboBox.Size = New System.Drawing.Size(200, 21)
         Me.JantinaComboBox.TabIndex = 19
         '
-        'AgamaLabel
-        '
-        AgamaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        AgamaLabel.AutoSize = True
-        AgamaLabel.Location = New System.Drawing.Point(395, 174)
-        AgamaLabel.Name = "AgamaLabel"
-        AgamaLabel.Size = New System.Drawing.Size(44, 13)
-        AgamaLabel.TabIndex = 20
-        AgamaLabel.Text = "Agama:"
-        '
         'AgamaComboBox
         '
         Me.AgamaComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -407,16 +447,6 @@ Partial Class frmProfileBasic
         Me.AgamaComboBox.Size = New System.Drawing.Size(200, 21)
         Me.AgamaComboBox.TabIndex = 21
         '
-        'Waris1Label
-        '
-        Waris1Label.Anchor = System.Windows.Forms.AnchorStyles.None
-        Waris1Label.AutoSize = True
-        Waris1Label.Location = New System.Drawing.Point(395, 201)
-        Waris1Label.Name = "Waris1Label"
-        Waris1Label.Size = New System.Drawing.Size(44, 13)
-        Waris1Label.TabIndex = 22
-        Waris1Label.Text = "Waris1:"
-        '
         'Waris1TextBox
         '
         Me.Waris1TextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -425,16 +455,6 @@ Partial Class frmProfileBasic
         Me.Waris1TextBox.Name = "Waris1TextBox"
         Me.Waris1TextBox.Size = New System.Drawing.Size(200, 21)
         Me.Waris1TextBox.TabIndex = 23
-        '
-        'Waris2Label
-        '
-        Waris2Label.Anchor = System.Windows.Forms.AnchorStyles.None
-        Waris2Label.AutoSize = True
-        Waris2Label.Location = New System.Drawing.Point(395, 228)
-        Waris2Label.Name = "Waris2Label"
-        Waris2Label.Size = New System.Drawing.Size(44, 13)
-        Waris2Label.TabIndex = 24
-        Waris2Label.Text = "Waris2:"
         '
         'Waris2TextBox
         '
@@ -445,16 +465,6 @@ Partial Class frmProfileBasic
         Me.Waris2TextBox.Size = New System.Drawing.Size(200, 21)
         Me.Waris2TextBox.TabIndex = 25
         '
-        'KelayakanLabel
-        '
-        KelayakanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        KelayakanLabel.AutoSize = True
-        KelayakanLabel.Location = New System.Drawing.Point(395, 255)
-        KelayakanLabel.Name = "KelayakanLabel"
-        KelayakanLabel.Size = New System.Drawing.Size(60, 13)
-        KelayakanLabel.TabIndex = 26
-        KelayakanLabel.Text = "Kelayakan:"
-        '
         'KelayakanComboBox
         '
         Me.KelayakanComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -464,16 +474,6 @@ Partial Class frmProfileBasic
         Me.KelayakanComboBox.Name = "KelayakanComboBox"
         Me.KelayakanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.KelayakanComboBox.TabIndex = 27
-        '
-        'ProfileBasicBindingSource
-        '
-        Me.ProfileBasicBindingSource.DataMember = "ProfileBasic"
-        Me.ProfileBasicBindingSource.DataSource = Me.EmployeeDataSEDS
-        '
-        'EmployeeDataSEDS
-        '
-        Me.EmployeeDataSEDS.DataSetName = "EmployeeDataSEDS"
-        Me.EmployeeDataSEDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ProfileBasicTableAdapter
         '
@@ -494,7 +494,7 @@ Partial Class frmProfileBasic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.ClientSize = New System.Drawing.Size(792, 573)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(NamaPegawaiLabel)
