@@ -299,7 +299,7 @@ WHERE        (ID = ?)</CommandText>
               <Mapping SourceColumn="Password" DataSetColumn="Password" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="EmployeeDataSECS (MySettings)" DbObjectName="[User]" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryReturnPasswd" Modifier="Public" Name="ScalarQueryReturnPasswd" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ReturnPasswd" UserSourceName="ScalarQueryReturnPasswd">
+              <DbSource ConnectionRef="EmployeeDataSECS (MySettings)" DbObjectName="[User]" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryReturnPasswd" Modifier="Public" Name="ScalarQueryReturnPasswd" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQueryReturnPasswd">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Password]
@@ -311,7 +311,7 @@ WHERE        (UserName = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="EmployeeDataSECS (MySettings)" DbObjectName="[User]" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryUserLogin" Modifier="Public" Name="ScalarQueryUserLogin" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQueryUserLogin">
+              <DbSource ConnectionRef="EmployeeDataSECS (MySettings)" DbObjectName="[User]" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryUserLogin" Modifier="Public" Name="ScalarQueryUserLogin" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ScalarQueryUserLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        UserName, [Password]
@@ -334,7 +334,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
   <xs:element name="EmployeeDataSEDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EmployeeDataSEDS" msprop:Generator_UserDSName="EmployeeDataSEDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ProfileAdvance" msprop:Generator_TableClassName="ProfileAdvanceDataTable" msprop:Generator_TableVarName="tableProfileAdvance" msprop:Generator_RowChangedName="ProfileAdvanceRowChanged" msprop:Generator_TablePropName="ProfileAdvance" msprop:Generator_RowDeletingName="ProfileAdvanceRowDeleting" msprop:Generator_RowChangingName="ProfileAdvanceRowChanging" msprop:Generator_RowEvHandlerName="ProfileAdvanceRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileAdvanceRowDeleted" msprop:Generator_RowClassName="ProfileAdvanceRow" msprop:Generator_UserTableName="ProfileAdvance" msprop:Generator_RowEvArgName="ProfileAdvanceRowChangeEvent">
+        <xs:element name="ProfileAdvance" msprop:Generator_TableClassName="ProfileAdvanceDataTable" msprop:Generator_TableVarName="tableProfileAdvance" msprop:Generator_TablePropName="ProfileAdvance" msprop:Generator_RowDeletingName="ProfileAdvanceRowDeleting" msprop:Generator_RowChangingName="ProfileAdvanceRowChanging" msprop:Generator_RowEvHandlerName="ProfileAdvanceRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileAdvanceRowDeleted" msprop:Generator_UserTableName="ProfileAdvance" msprop:Generator_RowChangedName="ProfileAdvanceRowChanged" msprop:Generator_RowEvArgName="ProfileAdvanceRowChangeEvent" msprop:Generator_RowClassName="ProfileAdvanceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -394,7 +394,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProfileBasic" msprop:Generator_TableClassName="ProfileBasicDataTable" msprop:Generator_TableVarName="tableProfileBasic" msprop:Generator_RowChangedName="ProfileBasicRowChanged" msprop:Generator_TablePropName="ProfileBasic" msprop:Generator_RowDeletingName="ProfileBasicRowDeleting" msprop:Generator_RowChangingName="ProfileBasicRowChanging" msprop:Generator_RowEvHandlerName="ProfileBasicRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileBasicRowDeleted" msprop:Generator_RowClassName="ProfileBasicRow" msprop:Generator_UserTableName="ProfileBasic" msprop:Generator_RowEvArgName="ProfileBasicRowChangeEvent">
+        <xs:element name="ProfileBasic" msprop:Generator_TableClassName="ProfileBasicDataTable" msprop:Generator_TableVarName="tableProfileBasic" msprop:Generator_TablePropName="ProfileBasic" msprop:Generator_RowDeletingName="ProfileBasicRowDeleting" msprop:Generator_RowChangingName="ProfileBasicRowChanging" msprop:Generator_RowEvHandlerName="ProfileBasicRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileBasicRowDeleted" msprop:Generator_UserTableName="ProfileBasic" msprop:Generator_RowChangedName="ProfileBasicRowChanged" msprop:Generator_RowEvArgName="ProfileBasicRowChangeEvent" msprop:Generator_RowClassName="ProfileBasicRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -406,7 +406,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NoJbt" msprop:Generator_ColumnVarNameInTable="columnNoJbt" msprop:Generator_ColumnPropNameInRow="NoJbt" msprop:Generator_ColumnPropNameInTable="NoJbtColumn" msprop:Generator_UserColumnName="NoJbt" type="xs:int" minOccurs="0" />
-              <xs:element name="NoPengenalan" msprop:Generator_ColumnVarNameInTable="columnNoPengenalan" msprop:Generator_ColumnPropNameInRow="NoPengenalan" msprop:Generator_ColumnPropNameInTable="NoPengenalanColumn" msprop:Generator_UserColumnName="NoPengenalan" type="xs:int" minOccurs="0" />
+              <xs:element name="NoPengenalan" msprop:Generator_ColumnVarNameInTable="columnNoPengenalan" msprop:Generator_ColumnPropNameInRow="NoPengenalan" msprop:Generator_ColumnPropNameInTable="NoPengenalanColumn" msprop:Generator_UserColumnName="NoPengenalan" type="xs:string" minOccurs="0" />
               <xs:element name="NoKWSP" msprop:Generator_ColumnVarNameInTable="columnNoKWSP" msprop:Generator_ColumnPropNameInRow="NoKWSP" msprop:Generator_ColumnPropNameInTable="NoKWSPColumn" msprop:Generator_UserColumnName="NoKWSP" type="xs:int" minOccurs="0" />
               <xs:element name="TarikhLahir" msprop:Generator_ColumnVarNameInTable="columnTarikhLahir" msprop:Generator_ColumnPropNameInRow="TarikhLahir" msprop:Generator_ColumnPropNameInTable="TarikhLahirColumn" msprop:Generator_UserColumnName="TarikhLahir" type="xs:dateTime" minOccurs="0" />
               <xs:element name="TempatLahir" msprop:Generator_ColumnVarNameInTable="columnTempatLahir" msprop:Generator_ColumnPropNameInRow="TempatLahir" msprop:Generator_ColumnPropNameInTable="TempatLahirColumn" msprop:Generator_UserColumnName="TempatLahir" minOccurs="0">
@@ -461,7 +461,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowClassName="UserRow" msprop:Generator_UserTableName="User" msprop:Generator_RowEvArgName="UserRowChangeEvent">
+        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_UserTableName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_RowClassName="UserRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -499,7 +499,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="ProfileBasicProfileAdvance" msdata:parent="ProfileBasic" msdata:child="ProfileAdvance" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="ProfileAdvance" msprop:Generator_ChildPropName="GetProfileAdvanceRows" msprop:Generator_UserRelationName="ProfileBasicProfileAdvance" msprop:Generator_ParentPropName="ProfileBasicRow" msprop:Generator_RelationVarName="relationProfileBasicProfileAdvance" msprop:Generator_UserParentTable="ProfileBasic" />
+      <msdata:Relationship name="ProfileBasicProfileAdvance" msdata:parent="ProfileBasic" msdata:child="ProfileAdvance" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="ProfileAdvance" msprop:Generator_ChildPropName="GetProfileAdvanceRows" msprop:Generator_UserRelationName="ProfileBasicProfileAdvance" msprop:Generator_RelationVarName="relationProfileBasicProfileAdvance" msprop:Generator_UserParentTable="ProfileBasic" msprop:Generator_ParentPropName="ProfileBasicRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

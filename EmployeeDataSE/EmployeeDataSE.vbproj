@@ -74,9 +74,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSEDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeDataSEDS.vb">
-      <DependentUpon>EmployeeDataSEDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmAbout.Designer.vb">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </Compile>

@@ -26,7 +26,6 @@ Partial Class frmProfileBasic
         Dim IDLabel As System.Windows.Forms.Label
         Dim NamaPegawaiLabel As System.Windows.Forms.Label
         Dim NoJbtLabel As System.Windows.Forms.Label
-        Dim NoPengenalanLabel As System.Windows.Forms.Label
         Dim NoKWSPLabel As System.Windows.Forms.Label
         Dim TarikhLahirLabel As System.Windows.Forms.Label
         Dim TempatLahirLabel As System.Windows.Forms.Label
@@ -37,6 +36,7 @@ Partial Class frmProfileBasic
         Dim Waris2Label As System.Windows.Forms.Label
         Dim KelayakanLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileBasic))
+        Dim NoPengenalanLabel As System.Windows.Forms.Label
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ProfileBasicBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
@@ -56,7 +56,6 @@ Partial Class frmProfileBasic
         Me.IDTextBox = New System.Windows.Forms.TextBox()
         Me.NamaPegawaiTextBox = New System.Windows.Forms.TextBox()
         Me.NoJbtTextBox = New System.Windows.Forms.TextBox()
-        Me.NoPengenalanTextBox = New System.Windows.Forms.TextBox()
         Me.NoKWSPTextBox = New System.Windows.Forms.TextBox()
         Me.TarikhLahirDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.TempatLahirTextBox = New System.Windows.Forms.TextBox()
@@ -69,10 +68,10 @@ Partial Class frmProfileBasic
         Me.ProfileBasicTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.ProfileBasicTableAdapter()
         Me.TableAdapterManager = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager()
         Me.TimeNewId = New System.Windows.Forms.Timer(Me.components)
+        Me.NoPengenalanTextBox = New System.Windows.Forms.TextBox()
         IDLabel = New System.Windows.Forms.Label()
         NamaPegawaiLabel = New System.Windows.Forms.Label()
         NoJbtLabel = New System.Windows.Forms.Label()
-        NoPengenalanLabel = New System.Windows.Forms.Label()
         NoKWSPLabel = New System.Windows.Forms.Label()
         TarikhLahirLabel = New System.Windows.Forms.Label()
         TempatLahirLabel = New System.Windows.Forms.Label()
@@ -82,6 +81,7 @@ Partial Class frmProfileBasic
         Waris1Label = New System.Windows.Forms.Label()
         Waris2Label = New System.Windows.Forms.Label()
         KelayakanLabel = New System.Windows.Forms.Label()
+        NoPengenalanLabel = New System.Windows.Forms.Label()
         CType(Me.ProfileBasicBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfileBasicBindingNavigator.SuspendLayout()
         CType(Me.ProfileBasicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,16 +117,6 @@ Partial Class frmProfileBasic
         NoJbtLabel.Size = New System.Drawing.Size(66, 13)
         NoJbtLabel.TabIndex = 6
         NoJbtLabel.Text = "No Jabatan:"
-        '
-        'NoPengenalanLabel
-        '
-        NoPengenalanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        NoPengenalanLabel.AutoSize = True
-        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
-        NoPengenalanLabel.Name = "NoPengenalanLabel"
-        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
-        NoPengenalanLabel.TabIndex = 8
-        NoPengenalanLabel.Text = "No Pengenalan:"
         '
         'NoKWSPLabel
         '
@@ -269,7 +259,7 @@ Partial Class frmProfileBasic
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -378,15 +368,6 @@ Partial Class frmProfileBasic
         Me.NoJbtTextBox.Size = New System.Drawing.Size(200, 21)
         Me.NoJbtTextBox.TabIndex = 7
         '
-        'NoPengenalanTextBox
-        '
-        Me.NoPengenalanTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.NoPengenalanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoPengenalan", True))
-        Me.NoPengenalanTextBox.Location = New System.Drawing.Point(189, 198)
-        Me.NoPengenalanTextBox.Name = "NoPengenalanTextBox"
-        Me.NoPengenalanTextBox.Size = New System.Drawing.Size(200, 21)
-        Me.NoPengenalanTextBox.TabIndex = 9
-        '
         'NoKWSPTextBox
         '
         Me.NoKWSPTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -410,6 +391,7 @@ Partial Class frmProfileBasic
         Me.TempatLahirTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TempatLahirTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "TempatLahir", True))
         Me.TempatLahirTextBox.Location = New System.Drawing.Point(189, 279)
+        Me.TempatLahirTextBox.MaxLength = 65535
         Me.TempatLahirTextBox.Multiline = True
         Me.TempatLahirTextBox.Name = "TempatLahirTextBox"
         Me.TempatLahirTextBox.Size = New System.Drawing.Size(495, 80)
@@ -420,6 +402,7 @@ Partial Class frmProfileBasic
         Me.AlamatRumahTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.AlamatRumahTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "AlamatRumah", True))
         Me.AlamatRumahTextBox.Location = New System.Drawing.Point(189, 365)
+        Me.AlamatRumahTextBox.MaxLength = 65535
         Me.AlamatRumahTextBox.Multiline = True
         Me.AlamatRumahTextBox.Name = "AlamatRumahTextBox"
         Me.AlamatRumahTextBox.Size = New System.Drawing.Size(495, 80)
@@ -490,19 +473,36 @@ Partial Class frmProfileBasic
         'TimeNewId
         '
         '
+        'NoPengenalanLabel
+        '
+        NoPengenalanLabel.AutoSize = True
+        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
+        NoPengenalanLabel.Name = "NoPengenalanLabel"
+        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
+        NoPengenalanLabel.TabIndex = 27
+        NoPengenalanLabel.Text = "No Pengenalan:"
+        '
+        'NoPengenalanTextBox
+        '
+        Me.NoPengenalanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoPengenalan", True))
+        Me.NoPengenalanTextBox.Location = New System.Drawing.Point(189, 198)
+        Me.NoPengenalanTextBox.Name = "NoPengenalanTextBox"
+        Me.NoPengenalanTextBox.Size = New System.Drawing.Size(200, 21)
+        Me.NoPengenalanTextBox.TabIndex = 28
+        '
         'frmProfileBasic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(792, 573)
+        Me.Controls.Add(NoPengenalanLabel)
+        Me.Controls.Add(Me.NoPengenalanTextBox)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(NamaPegawaiLabel)
         Me.Controls.Add(Me.NamaPegawaiTextBox)
         Me.Controls.Add(NoJbtLabel)
         Me.Controls.Add(Me.NoJbtTextBox)
-        Me.Controls.Add(NoPengenalanLabel)
-        Me.Controls.Add(Me.NoPengenalanTextBox)
         Me.Controls.Add(NoKWSPLabel)
         Me.Controls.Add(Me.NoKWSPTextBox)
         Me.Controls.Add(TarikhLahirLabel)
@@ -558,7 +558,6 @@ Partial Class frmProfileBasic
     Friend WithEvents IDTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NamaPegawaiTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NoJbtTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents NoPengenalanTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NoKWSPTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TarikhLahirDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents TempatLahirTextBox As System.Windows.Forms.TextBox
@@ -569,4 +568,5 @@ Partial Class frmProfileBasic
     Friend WithEvents Waris2TextBox As System.Windows.Forms.TextBox
     Friend WithEvents KelayakanComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents TimeNewId As System.Windows.Forms.Timer
+    Friend WithEvents NoPengenalanTextBox As System.Windows.Forms.TextBox
 End Class

@@ -982,7 +982,7 @@ Partial Public Class EmployeeDataSEDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddProfileBasicRow(ByVal ID As Integer, ByVal NamaPegawai As String, ByVal NoJbt As Integer, ByVal NoPengenalan As Integer, ByVal NoKWSP As Integer, ByVal TarikhLahir As Date, ByVal TempatLahir As String, ByVal AlamatRumah As String, ByVal Jantina As String, ByVal Agama As String, ByVal Waris1 As String, ByVal Waris2 As String, ByVal Kelayakan As String) As ProfileBasicRow
+        Public Overloads Function AddProfileBasicRow(ByVal ID As Integer, ByVal NamaPegawai As String, ByVal NoJbt As Integer, ByVal NoPengenalan As String, ByVal NoKWSP As Integer, ByVal TarikhLahir As Date, ByVal TempatLahir As String, ByVal AlamatRumah As String, ByVal Jantina As String, ByVal Agama As String, ByVal Waris1 As String, ByVal Waris2 As String, ByVal Kelayakan As String) As ProfileBasicRow
             Dim rowProfileBasicRow As ProfileBasicRow = CType(Me.NewRow,ProfileBasicRow)
             Dim columnValuesArray() As Object = New Object() {ID, NamaPegawai, NoJbt, NoPengenalan, NoKWSP, TarikhLahir, TempatLahir, AlamatRumah, Jantina, Agama, Waris1, Waris2, Kelayakan}
             rowProfileBasicRow.ItemArray = columnValuesArray
@@ -1043,7 +1043,7 @@ Partial Public Class EmployeeDataSEDS
             MyBase.Columns.Add(Me.columnNamaPegawai)
             Me.columnNoJbt = New Global.System.Data.DataColumn("NoJbt", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNoJbt)
-            Me.columnNoPengenalan = New Global.System.Data.DataColumn("NoPengenalan", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnNoPengenalan = New Global.System.Data.DataColumn("NoPengenalan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNoPengenalan)
             Me.columnNoKWSP = New Global.System.Data.DataColumn("NoKWSP", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNoKWSP)
@@ -1896,10 +1896,10 @@ Partial Public Class EmployeeDataSEDS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoPengenalan() As Integer
+        Public Property NoPengenalan() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableProfileBasic.NoPengenalanColumn),Integer)
+                    Return CType(Me(Me.tableProfileBasic.NoPengenalanColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'NoPengenalan' in table 'ProfileBasic' is DBNull.", e)
                 End Try
