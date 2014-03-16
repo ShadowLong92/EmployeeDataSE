@@ -1,6 +1,8 @@
 ﻿Class frmReport
 
     Private Sub frmReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = My.Resources.user
+        Me.Text = "Laporan"
         GenerateReport()
     End Sub
 

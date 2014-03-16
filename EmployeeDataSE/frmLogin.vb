@@ -1,7 +1,7 @@
 ﻿Public Class frmLogin
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Text = "Logon to " + My.Application.Info.Title
+        Me.Text = "Login ke " + My.Application.Info.Title
         Me.Icon = My.Resources.user
     End Sub
 
@@ -21,39 +21,17 @@
         Catch ex As Exception
             MessageBox.Show("Invalid username or password, please try again.", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
-
     End Sub
 
-    Sub TestEncoding()
-        Dim plainText As String = InputBox("Enter the plain text:")
-        Dim password As String = InputBox("Enter the password:")
-
-        Dim wrapper As New Simple3Des(password)
-        Dim cipherText As String = wrapper.EncryptData(plainText)
-
-        ' Save
-        MsgBox("The cipher text is: " & cipherText)
-        My.Computer.FileSystem.WriteAllText(
-            My.Computer.FileSystem.SpecialDirectories.MyDocuments &
-            "\cipherText.txt", cipherText, False)
+    Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
+        Application.Exit()
     End Sub
 
-    Sub TestDecoding()
-        ' Read
-        Dim cipherText As String = My.Computer.FileSystem.ReadAllText(
-            My.Computer.FileSystem.SpecialDirectories.MyDocuments &
-                "\cipherText.txt")
-
-        Dim password As String = InputBox("Enter the password:")
-        Dim wrapper As New Simple3Des(password)
-
-        ' DecryptData throws if the wrong password is used. 
-        Try
-            Dim plainText As String = wrapper.DecryptData(cipherText)
-            MsgBox("The plain text is: " & plainText)
-        Catch ex As System.Security.Cryptography.CryptographicException
-            MsgBox("The data could not be decrypted with the password.")
-        End Try
+    Private Sub txtPassWord_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPassWord.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            btnLogin.PerformClick()
+        End If
     End Sub
 
 End Class

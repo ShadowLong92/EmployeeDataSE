@@ -38,4 +38,8 @@
     Private Sub KemasKiniToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KemasKiniToolStripMenuItem.Click
         frmSearchEmpId.Show()
     End Sub
+
+    Private Sub TimerRAM_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerRAM.Tick
+        tsslRAM.Text = "Free physical RAM: " + Math.Round((My.Computer.Info.AvailablePhysicalMemory) / 1024 / 1024, 2).ToString + "MB"
+    End Sub
 End Class

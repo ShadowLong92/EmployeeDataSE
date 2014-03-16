@@ -221,6 +221,8 @@
     <Content Include="EmployeeDataSE.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\splash_screen.png" />
+    <None Include="Resources\login_banner.png" />
     <None Include="Resources\about_office.png" />
     <None Include="Resources\user.ico" />
   </ItemGroup>

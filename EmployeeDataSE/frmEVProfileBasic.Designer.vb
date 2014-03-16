@@ -360,7 +360,7 @@ Partial Class frmEVProfileBasic
         Me.IDTextBox.Location = New System.Drawing.Point(189, 117)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.ReadOnly = True
-        Me.IDTextBox.Size = New System.Drawing.Size(200, 21)
+        Me.IDTextBox.Size = New System.Drawing.Size(100, 21)
         Me.IDTextBox.TabIndex = 2
         '
         'NamaPegawaiTextBox

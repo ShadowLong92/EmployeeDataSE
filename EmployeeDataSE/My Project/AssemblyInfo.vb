@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Employee Data Standard Edition")> 
+<Assembly: AssemblyTitle("Maklumat Pekerja")> 
 <Assembly: AssemblyDescription("Store, View, Update, Report of employee data")> 
 <Assembly: AssemblyCompany("ShadowLong and Anime4000")> 
-<Assembly: AssemblyProduct("Employee Data SE")> 
+<Assembly: AssemblyProduct("Employee Data Standard Edition")> 
 <Assembly: AssemblyCopyright("GNU GPL 2.0")> 
 <Assembly: AssemblyTrademark("Yeah!")> 
 

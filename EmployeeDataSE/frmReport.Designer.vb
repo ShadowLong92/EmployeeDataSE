@@ -25,8 +25,8 @@ Partial Class frmReport
         Me.menuBar = New System.Windows.Forms.MenuStrip()
         Me.tsmiReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPrint = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ieReport = New System.Windows.Forms.WebBrowser()
         Me.tsmiPrintPreview = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ieReport = New System.Windows.Forms.WebBrowser()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,6 +55,14 @@ Partial Class frmReport
         Me.tsmiPrint.Size = New System.Drawing.Size(230, 22)
         Me.tsmiPrint.Text = "Cetak La&poran Ini"
         '
+        'tsmiPrintPreview
+        '
+        Me.tsmiPrintPreview.Name = "tsmiPrintPreview"
+        Me.tsmiPrintPreview.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+                    Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
+        Me.tsmiPrintPreview.Size = New System.Drawing.Size(230, 22)
+        Me.tsmiPrintPreview.Text = "Paparkan &Cetakan"
+        '
         'ieReport
         '
         Me.ieReport.Dock = System.Windows.Forms.DockStyle.Fill
@@ -63,14 +71,6 @@ Partial Class frmReport
         Me.ieReport.Name = "ieReport"
         Me.ieReport.Size = New System.Drawing.Size(784, 562)
         Me.ieReport.TabIndex = 2
-        '
-        'tsmiPrintPreview
-        '
-        Me.tsmiPrintPreview.Name = "tsmiPrintPreview"
-        Me.tsmiPrintPreview.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-                    Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.tsmiPrintPreview.Size = New System.Drawing.Size(230, 22)
-        Me.tsmiPrintPreview.Text = "Paparkan &Cetakan"
         '
         'frmReport
         '
