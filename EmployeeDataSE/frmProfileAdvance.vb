@@ -4,6 +4,7 @@
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.ProfileAdvance' table. You can move, or remove it, as needed.
         Me.ProfileAdvanceTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileAdvance)
         Me.Text = "Daftar Pekerja Baru (Teperinci)"
+        Me.Icon = My.Resources.user
         BindingNavigatorAddNewItem.PerformClick()
         TimeAutoFetch.Start()
     End Sub

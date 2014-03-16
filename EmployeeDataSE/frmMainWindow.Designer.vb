@@ -27,10 +27,10 @@ Partial Class frmMainWindow
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiWork = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiRegNewWorker = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiRegNewWorker = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.KemasKiniToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,10 +66,17 @@ Partial Class frmMainWindow
         '
         'tsmiWork
         '
-        Me.tsmiWork.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegNewWorker, Me.ToolStripSeparator1})
+        Me.tsmiWork.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegNewWorker, Me.KemasKiniToolStripMenuItem})
         Me.tsmiWork.Name = "tsmiWork"
         Me.tsmiWork.Size = New System.Drawing.Size(44, 20)
         Me.tsmiWork.Text = "&Work"
+        '
+        'tsmiRegNewWorker
+        '
+        Me.tsmiRegNewWorker.Name = "tsmiRegNewWorker"
+        Me.tsmiRegNewWorker.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.tsmiRegNewWorker.Size = New System.Drawing.Size(283, 22)
+        Me.tsmiRegNewWorker.Text = "&Daftar Pekerja Baru"
         '
         'tsmiHelp
         '
@@ -84,17 +91,12 @@ Partial Class frmMainWindow
         Me.tsmiAbout.Size = New System.Drawing.Size(260, 22)
         Me.tsmiAbout.Text = "&About Employee Data Standard Edition"
         '
-        'tsmiRegNewWorker
+        'KemasKiniToolStripMenuItem
         '
-        Me.tsmiRegNewWorker.Name = "tsmiRegNewWorker"
-        Me.tsmiRegNewWorker.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.tsmiRegNewWorker.Size = New System.Drawing.Size(204, 22)
-        Me.tsmiRegNewWorker.Text = "&Daftar Pekerja Baru"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(201, 6)
+        Me.KemasKiniToolStripMenuItem.Name = "KemasKiniToolStripMenuItem"
+        Me.KemasKiniToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.K), System.Windows.Forms.Keys)
+        Me.KemasKiniToolStripMenuItem.Size = New System.Drawing.Size(283, 22)
+        Me.KemasKiniToolStripMenuItem.Text = "&Kemaskini dan Laporan Profil Pekerja"
         '
         'frmMainWindow
         '
@@ -124,6 +126,6 @@ Partial Class frmMainWindow
     Friend WithEvents tsmiHelp As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiRegNewWorker As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents KemasKiniToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

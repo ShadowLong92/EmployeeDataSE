@@ -34,4 +34,8 @@
     Private Sub tsmiRegNewWorker_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiRegNewWorker.Click
         frmProfileBasic.Show()
     End Sub
+
+    Private Sub KemasKiniToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KemasKiniToolStripMenuItem.Click
+        frmSearchEmpId.Show()
+    End Sub
 End Class

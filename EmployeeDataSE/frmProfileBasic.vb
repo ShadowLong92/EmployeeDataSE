@@ -4,9 +4,8 @@
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.ProfileBasic' table. You can move, or remove it, as needed.
         Me.ProfileBasicTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileBasic)
         Me.Text = "Daftar Pekerja Baru (Profil)"
-
+        Me.Icon = My.Resources.user
         BindingNavigatorAddNewItem.PerformClick()
-
         TimeNewId.Start()
 
     End Sub
