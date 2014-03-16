@@ -217,6 +217,7 @@
     <Content Include="EmployeeDataSE.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\about_office.png" />
     <None Include="Resources\user.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -22,17 +22,30 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Location = New System.Drawing.Point(205, 238)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(75, 23)
+        Me.btnLogin.TabIndex = 0
+        Me.btnLogin.Text = "&Login"
+        Me.btnLogin.UseVisualStyleBackColor = True
         '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(292, 273)
+        Me.Controls.Add(Me.btnLogin)
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!)
         Me.Name = "frmLogin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents btnLogin As System.Windows.Forms.Button
 End Class

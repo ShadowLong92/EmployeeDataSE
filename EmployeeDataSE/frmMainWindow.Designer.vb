@@ -26,13 +26,16 @@ Partial Class frmMainWindow
         Me.tsmiFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEdit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiWork = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuBar
         '
         Me.menuBar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile, Me.tsmiEdit})
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile, Me.tsmiEdit, Me.tsmiWork, Me.tsmiHelp})
         Me.menuBar.Location = New System.Drawing.Point(0, 0)
         Me.menuBar.Name = "menuBar"
         Me.menuBar.Size = New System.Drawing.Size(1016, 24)
@@ -50,7 +53,7 @@ Partial Class frmMainWindow
         '
         Me.tsmiExit.Name = "tsmiExit"
         Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.tsmiExit.Size = New System.Drawing.Size(132, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
         Me.tsmiExit.Text = "&Exit"
         '
         'tsmiEdit
@@ -58,6 +61,25 @@ Partial Class frmMainWindow
         Me.tsmiEdit.Name = "tsmiEdit"
         Me.tsmiEdit.Size = New System.Drawing.Size(37, 20)
         Me.tsmiEdit.Text = "&Edit"
+        '
+        'tsmiWork
+        '
+        Me.tsmiWork.Name = "tsmiWork"
+        Me.tsmiWork.Size = New System.Drawing.Size(44, 20)
+        Me.tsmiWork.Text = "&Work"
+        '
+        'tsmiHelp
+        '
+        Me.tsmiHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAbout})
+        Me.tsmiHelp.Name = "tsmiHelp"
+        Me.tsmiHelp.Size = New System.Drawing.Size(40, 20)
+        Me.tsmiHelp.Text = "&Help"
+        '
+        'tsmiAbout
+        '
+        Me.tsmiAbout.Name = "tsmiAbout"
+        Me.tsmiAbout.Size = New System.Drawing.Size(260, 22)
+        Me.tsmiAbout.Text = "&About Employee Data Standard Edition"
         '
         'frmMainWindow
         '
@@ -83,5 +105,8 @@ Partial Class frmMainWindow
     Friend WithEvents tsmiFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiEdit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiWork As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiHelp As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
 
 End Class
