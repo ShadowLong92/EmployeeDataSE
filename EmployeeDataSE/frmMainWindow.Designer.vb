@@ -29,6 +29,8 @@ Partial Class frmMainWindow
         Me.tsmiWork = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiRegNewWorker = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,7 +55,7 @@ Partial Class frmMainWindow
         '
         Me.tsmiExit.Name = "tsmiExit"
         Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(132, 22)
         Me.tsmiExit.Text = "&Exit"
         '
         'tsmiEdit
@@ -64,6 +66,7 @@ Partial Class frmMainWindow
         '
         'tsmiWork
         '
+        Me.tsmiWork.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiRegNewWorker, Me.ToolStripSeparator1})
         Me.tsmiWork.Name = "tsmiWork"
         Me.tsmiWork.Size = New System.Drawing.Size(44, 20)
         Me.tsmiWork.Text = "&Work"
@@ -80,6 +83,18 @@ Partial Class frmMainWindow
         Me.tsmiAbout.Name = "tsmiAbout"
         Me.tsmiAbout.Size = New System.Drawing.Size(260, 22)
         Me.tsmiAbout.Text = "&About Employee Data Standard Edition"
+        '
+        'tsmiRegNewWorker
+        '
+        Me.tsmiRegNewWorker.Name = "tsmiRegNewWorker"
+        Me.tsmiRegNewWorker.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.tsmiRegNewWorker.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiRegNewWorker.Text = "&Daftar Pekerja Baru"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(201, 6)
         '
         'frmMainWindow
         '
@@ -108,5 +123,7 @@ Partial Class frmMainWindow
     Friend WithEvents tsmiWork As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiHelp As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiRegNewWorker As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
 
 End Class

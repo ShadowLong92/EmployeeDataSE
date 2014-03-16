@@ -74,6 +74,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSEDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeDataSEDS.vb">
+      <DependentUpon>EmployeeDataSEDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.Designer.vb">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </Compile>
@@ -145,6 +148,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ReportVariable.vb" />
+    <Compile Include="Simple3Des.vb" />
     <Compile Include="SplashScreen.Designer.vb">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </Compile>
