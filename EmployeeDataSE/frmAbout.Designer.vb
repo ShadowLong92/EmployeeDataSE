@@ -33,7 +33,9 @@ Partial Class frmAbout
         Me.lnkLicense = New System.Windows.Forms.LinkLabel()
         Me.lnkEndUser = New System.Windows.Forms.LinkLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblJoin
@@ -97,9 +99,9 @@ Partial Class frmAbout
         '
         Me.lblMascot.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblMascot.BackColor = System.Drawing.Color.Transparent
+        Me.lblMascot.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.lblMascot.Enabled = False
-        Me.lblMascot.ForeColor = System.Drawing.Color.White
+        Me.lblMascot.ForeColor = System.Drawing.Color.Black
         Me.lblMascot.Location = New System.Drawing.Point(12, 273)
         Me.lblMascot.Name = "lblMascot"
         Me.lblMascot.Size = New System.Drawing.Size(624, 24)
@@ -109,7 +111,7 @@ Partial Class frmAbout
         '
         'lnkPrivacy
         '
-        Me.lnkPrivacy.BackColor = System.Drawing.Color.Transparent
+        Me.lnkPrivacy.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.lnkPrivacy.ForeColor = System.Drawing.Color.Black
         Me.lnkPrivacy.LinkColor = System.Drawing.Color.Blue
         Me.lnkPrivacy.Location = New System.Drawing.Point(450, 248)
@@ -122,7 +124,7 @@ Partial Class frmAbout
         '
         'lnkLicense
         '
-        Me.lnkLicense.BackColor = System.Drawing.Color.Transparent
+        Me.lnkLicense.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.lnkLicense.ForeColor = System.Drawing.Color.Black
         Me.lnkLicense.LinkColor = System.Drawing.Color.Blue
         Me.lnkLicense.Location = New System.Drawing.Point(204, 248)
@@ -135,7 +137,7 @@ Partial Class frmAbout
         '
         'lnkEndUser
         '
-        Me.lnkEndUser.BackColor = System.Drawing.Color.Transparent
+        Me.lnkEndUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.lnkEndUser.ForeColor = System.Drawing.Color.Black
         Me.lnkEndUser.LinkColor = System.Drawing.Color.Blue
         Me.lnkEndUser.Location = New System.Drawing.Point(12, 248)
@@ -149,16 +151,26 @@ Partial Class frmAbout
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(60, 60)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(648, 297)
+        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 230)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(648, 67)
+        Me.PictureBox2.TabIndex = 19
+        Me.PictureBox2.TabStop = False
         '
         'frmAbout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(247, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(648, 297)
         Me.Controls.Add(Me.lblMascot)
         Me.Controls.Add(Me.lnkPrivacy)
@@ -170,6 +182,7 @@ Partial Class frmAbout
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lblUpdate)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(664, 335)
@@ -180,6 +193,7 @@ Partial Class frmAbout
         Me.Text = "frmAbout"
         Me.TopMost = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,4 +208,5 @@ Partial Class frmAbout
     Friend WithEvents lnkLicense As System.Windows.Forms.LinkLabel
     Friend WithEvents lnkEndUser As System.Windows.Forms.LinkLabel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 End Class
