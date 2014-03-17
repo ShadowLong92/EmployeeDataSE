@@ -4,13 +4,7 @@
         Me.Text = My.Application.Info.Title + " (Ver.: " + My.Application.Info.Version.ToString + ")"
         Me.Icon = My.Resources.user
 
-        frmProfileBasic.MdiParent = Me
-        frmProfileAdvance.MdiParent = Me
-        frmSearchEmpId.MdiParent = Me
-        frmEVProfileBasic.MdiParent = Me
-        frmEVProfileAdvance.MdiParent = Me
-        frmReport.MdiParent = Me
-
+        MakeMdiParent()
     End Sub
 
     Private Sub frmMainWindow_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

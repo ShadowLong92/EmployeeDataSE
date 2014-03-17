@@ -66,7 +66,7 @@ Partial Class frmEVProfileAdvance
         Me.TindakkanTatatertibTextBox = New System.Windows.Forms.TextBox()
         Me.SejarahLantikanTextBox = New System.Windows.Forms.TextBox()
         Me.btnReport = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         IDLabel = New System.Windows.Forms.Label()
         StatusLabel = New System.Windows.Forms.Label()
         TarikhDilantikLabel = New System.Windows.Forms.Label()
@@ -440,21 +440,21 @@ Partial Class frmEVProfileAdvance
         Me.btnReport.Text = "&Laporan >"
         Me.btnReport.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnUpdate
         '
-        Me.Button1.Location = New System.Drawing.Point(571, 527)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Ke&maskini"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(571, 527)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 26
+        Me.btnUpdate.Text = "Ke&maskini"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'frmEVProfileAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 562)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
@@ -525,5 +525,5 @@ Partial Class frmEVProfileAdvance
     Friend WithEvents TindakkanTatatertibTextBox As System.Windows.Forms.TextBox
     Friend WithEvents SejarahLantikanTextBox As System.Windows.Forms.TextBox
     Friend WithEvents btnReport As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnUpdate As System.Windows.Forms.Button
 End Class

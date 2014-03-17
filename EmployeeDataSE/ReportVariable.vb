@@ -32,4 +32,13 @@
     Public TT As String
     Public SL As String
 
+    Sub MakeMdiParent()
+        frmProfileBasic.MdiParent = frmMainWindow
+        frmProfileAdvance.MdiParent = frmMainWindow
+        frmSearchEmpId.MdiParent = frmMainWindow
+        frmEVProfileBasic.MdiParent = frmMainWindow
+        frmEVProfileAdvance.MdiParent = frmMainWindow
+        frmReport.MdiParent = frmMainWindow
+    End Sub
+
 End Module

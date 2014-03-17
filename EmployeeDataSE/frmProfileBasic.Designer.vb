@@ -35,8 +35,8 @@ Partial Class frmProfileBasic
         Dim Waris1Label As System.Windows.Forms.Label
         Dim Waris2Label As System.Windows.Forms.Label
         Dim KelayakanLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileBasic))
         Dim NoPengenalanLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProfileBasic))
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ProfileBasicBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
@@ -207,6 +207,15 @@ Partial Class frmProfileBasic
         KelayakanLabel.Size = New System.Drawing.Size(60, 13)
         KelayakanLabel.TabIndex = 26
         KelayakanLabel.Text = "Kelayakan:"
+        '
+        'NoPengenalanLabel
+        '
+        NoPengenalanLabel.AutoSize = True
+        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
+        NoPengenalanLabel.Name = "NoPengenalanLabel"
+        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
+        NoPengenalanLabel.TabIndex = 8
+        NoPengenalanLabel.Text = "No Pengenalan:"
         '
         'btnNext
         '
@@ -473,22 +482,13 @@ Partial Class frmProfileBasic
         'TimeNewId
         '
         '
-        'NoPengenalanLabel
-        '
-        NoPengenalanLabel.AutoSize = True
-        NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
-        NoPengenalanLabel.Name = "NoPengenalanLabel"
-        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
-        NoPengenalanLabel.TabIndex = 27
-        NoPengenalanLabel.Text = "No Pengenalan:"
-        '
         'NoPengenalanTextBox
         '
         Me.NoPengenalanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoPengenalan", True))
         Me.NoPengenalanTextBox.Location = New System.Drawing.Point(189, 198)
         Me.NoPengenalanTextBox.Name = "NoPengenalanTextBox"
         Me.NoPengenalanTextBox.Size = New System.Drawing.Size(200, 21)
-        Me.NoPengenalanTextBox.TabIndex = 28
+        Me.NoPengenalanTextBox.TabIndex = 9
         '
         'frmProfileBasic
         '

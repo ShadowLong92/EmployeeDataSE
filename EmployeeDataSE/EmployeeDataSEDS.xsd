@@ -334,66 +334,6 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
   <xs:element name="EmployeeDataSEDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EmployeeDataSEDS" msprop:Generator_UserDSName="EmployeeDataSEDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ProfileAdvance" msprop:Generator_TableClassName="ProfileAdvanceDataTable" msprop:Generator_TableVarName="tableProfileAdvance" msprop:Generator_TablePropName="ProfileAdvance" msprop:Generator_RowDeletingName="ProfileAdvanceRowDeleting" msprop:Generator_RowChangingName="ProfileAdvanceRowChanging" msprop:Generator_RowEvHandlerName="ProfileAdvanceRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileAdvanceRowDeleted" msprop:Generator_UserTableName="ProfileAdvance" msprop:Generator_RowChangedName="ProfileAdvanceRowChanged" msprop:Generator_RowEvArgName="ProfileAdvanceRowChangeEvent" msprop:Generator_RowClassName="ProfileAdvanceRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TarikhDilantik" msprop:Generator_ColumnVarNameInTable="columnTarikhDilantik" msprop:Generator_ColumnPropNameInRow="TarikhDilantik" msprop:Generator_ColumnPropNameInTable="TarikhDilantikColumn" msprop:Generator_UserColumnName="TarikhDilantik" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TarikhPengesahanLantikan" msprop:Generator_ColumnVarNameInTable="columnTarikhPengesahanLantikan" msprop:Generator_ColumnPropNameInRow="TarikhPengesahanLantikan" msprop:Generator_ColumnPropNameInTable="TarikhPengesahanLantikanColumn" msprop:Generator_UserColumnName="TarikhPengesahanLantikan" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DisahkanDalamJawatan" msprop:Generator_ColumnVarNameInTable="columnDisahkanDalamJawatan" msprop:Generator_ColumnPropNameInRow="DisahkanDalamJawatan" msprop:Generator_ColumnPropNameInTable="DisahkanDalamJawatanColumn" msprop:Generator_UserColumnName="DisahkanDalamJawatan" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="PilihanUmurPersaraan" msprop:Generator_ColumnVarNameInTable="columnPilihanUmurPersaraan" msprop:Generator_ColumnPropNameInRow="PilihanUmurPersaraan" msprop:Generator_ColumnPropNameInTable="PilihanUmurPersaraanColumn" msprop:Generator_UserColumnName="PilihanUmurPersaraan" type="xs:int" minOccurs="0" />
-              <xs:element name="TarikhPersaraanWajib" msprop:Generator_ColumnVarNameInTable="columnTarikhPersaraanWajib" msprop:Generator_ColumnPropNameInRow="TarikhPersaraanWajib" msprop:Generator_ColumnPropNameInTable="TarikhPersaraanWajibColumn" msprop:Generator_UserColumnName="TarikhPersaraanWajib" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="CutiYangBerkaitan" msprop:Generator_ColumnVarNameInTable="columnCutiYangBerkaitan" msprop:Generator_ColumnPropNameInRow="CutiYangBerkaitan" msprop:Generator_ColumnPropNameInTable="CutiYangBerkaitanColumn" msprop:Generator_UserColumnName="CutiYangBerkaitan" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="KursusKursus" msprop:Generator_ColumnVarNameInTable="columnKursusKursus" msprop:Generator_ColumnPropNameInRow="KursusKursus" msprop:Generator_ColumnPropNameInTable="KursusKursusColumn" msprop:Generator_UserColumnName="KursusKursus" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="APC" msprop:Generator_ColumnVarNameInTable="columnAPC" msprop:Generator_ColumnPropNameInRow="APC" msprop:Generator_ColumnPropNameInTable="APCColumn" msprop:Generator_UserColumnName="APC" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TindakkanTatatertib" msprop:Generator_ColumnVarNameInTable="columnTindakkanTatatertib" msprop:Generator_ColumnPropNameInRow="TindakkanTatatertib" msprop:Generator_ColumnPropNameInTable="TindakkanTatatertibColumn" msprop:Generator_UserColumnName="TindakkanTatatertib" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SejarahLantikan" msprop:Generator_ColumnVarNameInTable="columnSejarahLantikan" msprop:Generator_ColumnPropNameInRow="SejarahLantikan" msprop:Generator_ColumnPropNameInTable="SejarahLantikanColumn" msprop:Generator_UserColumnName="SejarahLantikan" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="ProfileBasic" msprop:Generator_TableClassName="ProfileBasicDataTable" msprop:Generator_TableVarName="tableProfileBasic" msprop:Generator_TablePropName="ProfileBasic" msprop:Generator_RowDeletingName="ProfileBasicRowDeleting" msprop:Generator_RowChangingName="ProfileBasicRowChanging" msprop:Generator_RowEvHandlerName="ProfileBasicRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileBasicRowDeleted" msprop:Generator_UserTableName="ProfileBasic" msprop:Generator_RowChangedName="ProfileBasicRowChanged" msprop:Generator_RowEvArgName="ProfileBasicRowChangeEvent" msprop:Generator_RowClassName="ProfileBasicRow">
           <xs:complexType>
             <xs:sequence>
@@ -406,7 +346,7 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NoJbt" msprop:Generator_ColumnVarNameInTable="columnNoJbt" msprop:Generator_ColumnPropNameInRow="NoJbt" msprop:Generator_ColumnPropNameInTable="NoJbtColumn" msprop:Generator_UserColumnName="NoJbt" type="xs:int" minOccurs="0" />
-              <xs:element name="NoPengenalan" msprop:Generator_ColumnVarNameInTable="columnNoPengenalan" msprop:Generator_ColumnPropNameInRow="NoPengenalan" msprop:Generator_ColumnPropNameInTable="NoPengenalanColumn" msprop:Generator_UserColumnName="NoPengenalan" type="xs:string" minOccurs="0" />
+              <xs:element name="NoPengenalan" msprop:Generator_ColumnVarNameInTable="columnNoPengenalan" msprop:Generator_ColumnPropNameInRow="NoPengenalan" msprop:Generator_ColumnPropNameInTable="NoPengenalanColumn" msprop:Generator_UserColumnName="NoPengenalan" type="xs:unsignedLong" minOccurs="0" />
               <xs:element name="NoKWSP" msprop:Generator_ColumnVarNameInTable="columnNoKWSP" msprop:Generator_ColumnPropNameInRow="NoKWSP" msprop:Generator_ColumnPropNameInTable="NoKWSPColumn" msprop:Generator_UserColumnName="NoKWSP" type="xs:int" minOccurs="0" />
               <xs:element name="TarikhLahir" msprop:Generator_ColumnVarNameInTable="columnTarikhLahir" msprop:Generator_ColumnPropNameInRow="TarikhLahir" msprop:Generator_ColumnPropNameInTable="TarikhLahirColumn" msprop:Generator_UserColumnName="TarikhLahir" type="xs:dateTime" minOccurs="0" />
               <xs:element name="TempatLahir" msprop:Generator_ColumnVarNameInTable="columnTempatLahir" msprop:Generator_ColumnPropNameInRow="TempatLahir" msprop:Generator_ColumnPropNameInTable="TempatLahirColumn" msprop:Generator_UserColumnName="TempatLahir" minOccurs="0">
@@ -458,6 +398,66 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ProfileAdvance" msprop:Generator_TableClassName="ProfileAdvanceDataTable" msprop:Generator_TableVarName="tableProfileAdvance" msprop:Generator_TablePropName="ProfileAdvance" msprop:Generator_RowDeletingName="ProfileAdvanceRowDeleting" msprop:Generator_RowChangingName="ProfileAdvanceRowChanging" msprop:Generator_RowEvHandlerName="ProfileAdvanceRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfileAdvanceRowDeleted" msprop:Generator_UserTableName="ProfileAdvance" msprop:Generator_RowChangedName="ProfileAdvanceRowChanged" msprop:Generator_RowEvArgName="ProfileAdvanceRowChangeEvent" msprop:Generator_RowClassName="ProfileAdvanceRow" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+                    <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="255" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TarikhDilantik" msprop:Generator_ColumnVarNameInTable="columnTarikhDilantik" msprop:Generator_ColumnPropNameInRow="TarikhDilantik" msprop:Generator_ColumnPropNameInTable="TarikhDilantikColumn" msprop:Generator_UserColumnName="TarikhDilantik" type="xs:dateTime" minOccurs="0" />
+                    <xs:element name="TarikhPengesahanLantikan" msprop:Generator_ColumnVarNameInTable="columnTarikhPengesahanLantikan" msprop:Generator_ColumnPropNameInRow="TarikhPengesahanLantikan" msprop:Generator_ColumnPropNameInTable="TarikhPengesahanLantikanColumn" msprop:Generator_UserColumnName="TarikhPengesahanLantikan" type="xs:dateTime" minOccurs="0" />
+                    <xs:element name="DisahkanDalamJawatan" msprop:Generator_ColumnVarNameInTable="columnDisahkanDalamJawatan" msprop:Generator_ColumnPropNameInRow="DisahkanDalamJawatan" msprop:Generator_ColumnPropNameInTable="DisahkanDalamJawatanColumn" msprop:Generator_UserColumnName="DisahkanDalamJawatan" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="255" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="PilihanUmurPersaraan" msprop:Generator_ColumnVarNameInTable="columnPilihanUmurPersaraan" msprop:Generator_ColumnPropNameInRow="PilihanUmurPersaraan" msprop:Generator_ColumnPropNameInTable="PilihanUmurPersaraanColumn" msprop:Generator_UserColumnName="PilihanUmurPersaraan" type="xs:int" minOccurs="0" />
+                    <xs:element name="TarikhPersaraanWajib" msprop:Generator_ColumnVarNameInTable="columnTarikhPersaraanWajib" msprop:Generator_ColumnPropNameInRow="TarikhPersaraanWajib" msprop:Generator_ColumnPropNameInTable="TarikhPersaraanWajibColumn" msprop:Generator_UserColumnName="TarikhPersaraanWajib" type="xs:dateTime" minOccurs="0" />
+                    <xs:element name="CutiYangBerkaitan" msprop:Generator_ColumnVarNameInTable="columnCutiYangBerkaitan" msprop:Generator_ColumnPropNameInRow="CutiYangBerkaitan" msprop:Generator_ColumnPropNameInTable="CutiYangBerkaitanColumn" msprop:Generator_UserColumnName="CutiYangBerkaitan" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="255" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="KursusKursus" msprop:Generator_ColumnVarNameInTable="columnKursusKursus" msprop:Generator_ColumnPropNameInRow="KursusKursus" msprop:Generator_ColumnPropNameInTable="KursusKursusColumn" msprop:Generator_UserColumnName="KursusKursus" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="536870910" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="APC" msprop:Generator_ColumnVarNameInTable="columnAPC" msprop:Generator_ColumnPropNameInRow="APC" msprop:Generator_ColumnPropNameInTable="APCColumn" msprop:Generator_UserColumnName="APC" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="536870910" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="TindakkanTatatertib" msprop:Generator_ColumnVarNameInTable="columnTindakkanTatatertib" msprop:Generator_ColumnPropNameInRow="TindakkanTatatertib" msprop:Generator_ColumnPropNameInTable="TindakkanTatatertibColumn" msprop:Generator_UserColumnName="TindakkanTatatertib" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="536870910" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SejarahLantikan" msprop:Generator_ColumnVarNameInTable="columnSejarahLantikan" msprop:Generator_ColumnPropNameInRow="SejarahLantikan" msprop:Generator_ColumnPropNameInTable="SejarahLantikanColumn" msprop:Generator_UserColumnName="SejarahLantikan" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="536870910" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -496,10 +496,9 @@ WHERE        (UserName = ?) AND ([Password] = ?)</CommandText>
       <xs:selector xpath=".//mstns:User" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
+    <xs:keyref name="ProfileBasicProfileAdvance" refer="ProfileBasic_Constraint1" msdata:IsNested="true" msprop:rel_Generator_UserChildTable="ProfileAdvance" msprop:rel_Generator_ChildPropName="GetProfileAdvanceRows" msprop:rel_Generator_UserRelationName="ProfileBasicProfileAdvance" msprop:rel_Generator_RelationVarName="relationProfileBasicProfileAdvance" msprop:rel_Generator_UserParentTable="ProfileBasic" msprop:rel_Generator_ParentPropName="ProfileBasicRow">
+      <xs:selector xpath=".//mstns:ProfileAdvance" />
+      <xs:field xpath="mstns:ID" />
+    </xs:keyref>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="ProfileBasicProfileAdvance" msdata:parent="ProfileBasic" msdata:child="ProfileAdvance" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="ProfileAdvance" msprop:Generator_ChildPropName="GetProfileAdvanceRows" msprop:Generator_UserRelationName="ProfileBasicProfileAdvance" msprop:Generator_RelationVarName="relationProfileBasicProfileAdvance" msprop:Generator_UserParentTable="ProfileBasic" msprop:Generator_ParentPropName="ProfileBasicRow" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

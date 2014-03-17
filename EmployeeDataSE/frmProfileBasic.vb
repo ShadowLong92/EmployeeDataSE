@@ -5,6 +5,8 @@
         Me.ProfileBasicTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileBasic)
         Me.Text = "Daftar Pekerja Baru (Profil)"
         Me.Icon = My.Resources.user
+        MakeMdiParent()
+
         BindingNavigatorAddNewItem.PerformClick()
         TimeNewId.Start()
 

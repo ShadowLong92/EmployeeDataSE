@@ -1,4 +1,6 @@
-﻿Public Class frmEVProfileAdvance
+﻿Imports System.Text.RegularExpressions
+
+Public Class frmEVProfileAdvance
 
     Private Sub ProfileAdvanceBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileAdvanceBindingNavigatorSaveItem.Click
         Me.Validate()
@@ -13,14 +15,19 @@
 
         Me.Text = "Kemaskini dan Laporan Pekerja"
         Me.Icon = My.Resources.user
+        MakeMdiParent()
 
         Do Until SID = IDTextBox.Text
             BindingNavigatorMoveNextItem.PerformClick()
         Loop
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        ProfileAdvanceBindingNavigatorSaveItem.PerformClick()
+    Private Sub btnUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdate.Click
+        Dim Berjaya = MessageBox.Show(Regex.Unescape("Kemaskini telah berjaya!\nLihat laporan?"), "Kemaskini", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+        If Berjaya = Windows.Forms.DialogResult.Yes Then
+            ProfileAdvanceBindingNavigatorSaveItem.PerformClick()
+            btnReport.PerformClick()
+        End If
     End Sub
 
     Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click

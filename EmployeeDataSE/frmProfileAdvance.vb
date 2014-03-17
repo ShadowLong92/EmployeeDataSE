@@ -5,6 +5,8 @@
         Me.ProfileAdvanceTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileAdvance)
         Me.Text = "Daftar Pekerja Baru (Teperinci)"
         Me.Icon = My.Resources.user
+        MakeMdiParent()
+
         BindingNavigatorAddNewItem.PerformClick()
         TimeAutoFetch.Start()
         With PilihanUmurPersaraanComboBox.Items

@@ -5,6 +5,7 @@
         Me.ProfileBasicTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileBasic)
         Me.Icon = My.Resources.user
         Me.Text = "Kemaskini dan Laporan"
+        MakeMdiParent()
     End Sub
 
     Private Sub lstName_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstName.SelectedIndexChanged
