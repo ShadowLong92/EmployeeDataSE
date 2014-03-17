@@ -56,8 +56,8 @@ Partial Class frmAbout
         Me.lblAbout.Name = "lblAbout"
         Me.lblAbout.Size = New System.Drawing.Size(381, 50)
         Me.lblAbout.TabIndex = 12
-        Me.lblAbout.Text = "This project was created for for local state government office. Provide basic and" & _
-            " simple employee profile within offline\local database."
+        Me.lblAbout.Text = "This project was created for local state government office. Provide basic and sim" & _
+            "ple employee profile within offline\local database."
         Me.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblVersion
