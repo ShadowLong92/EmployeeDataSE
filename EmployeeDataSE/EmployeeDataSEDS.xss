@@ -7,19 +7,19 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:ProfileAdvance" ZOrder="4" X="359" Y="57" Height="305" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:ProfileBasic" ZOrder="3" X="53" Y="63" Height="324" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:User" ZOrder="2" X="655" Y="70" Height="172" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:User" ZOrder="3" X="655" Y="70" Height="172" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:ProfileBasic" ZOrder="2" X="49" Y="51" Height="305" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:ProfileBasicProfileAdvance" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>265</X>
-          <Y>212</Y>
+          <X>261</X>
+          <Y>206</Y>
         </Point>
         <Point>
           <X>359</X>
-          <Y>212</Y>
+          <Y>206</Y>
         </Point>
       </RoutePoints>
     </Connector>

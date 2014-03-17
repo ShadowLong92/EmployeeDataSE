@@ -67,9 +67,15 @@ Partial Class frmEVProfileBasic
         Me.Waris1TextBox = New System.Windows.Forms.TextBox()
         Me.Waris2TextBox = New System.Windows.Forms.TextBox()
         Me.KelayakanComboBox = New System.Windows.Forms.ComboBox()
-        Me.btnNext = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.TimeSearch = New System.Windows.Forms.Timer(Me.components)
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.TimerIdSearch = New System.Windows.Forms.Timer(Me.components)
+        Me.JantinaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JantinaTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.JantinaTableAdapter()
+        Me.AgamaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AgamaTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.AgamaTableAdapter()
+        Me.KelayakanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KelayakanTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.KelayakanTableAdapter()
         IDLabel = New System.Windows.Forms.Label()
         NamaPegawaiLabel = New System.Windows.Forms.Label()
         NoJbtLabel = New System.Windows.Forms.Label()
@@ -87,11 +93,13 @@ Partial Class frmEVProfileBasic
         CType(Me.ProfileBasicBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfileBasicBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfileBasicBindingNavigator.SuspendLayout()
+        CType(Me.JantinaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AgamaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KelayakanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDLabel
         '
-        IDLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         IDLabel.AutoSize = True
         IDLabel.Location = New System.Drawing.Point(100, 120)
         IDLabel.Name = "IDLabel"
@@ -101,7 +109,6 @@ Partial Class frmEVProfileBasic
         '
         'NamaPegawaiLabel
         '
-        NamaPegawaiLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         NamaPegawaiLabel.AutoSize = True
         NamaPegawaiLabel.Location = New System.Drawing.Point(100, 147)
         NamaPegawaiLabel.Name = "NamaPegawaiLabel"
@@ -111,7 +118,6 @@ Partial Class frmEVProfileBasic
         '
         'NoJbtLabel
         '
-        NoJbtLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         NoJbtLabel.AutoSize = True
         NoJbtLabel.Location = New System.Drawing.Point(100, 174)
         NoJbtLabel.Name = "NoJbtLabel"
@@ -121,7 +127,6 @@ Partial Class frmEVProfileBasic
         '
         'NoPengenalanLabel
         '
-        NoPengenalanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         NoPengenalanLabel.AutoSize = True
         NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
         NoPengenalanLabel.Name = "NoPengenalanLabel"
@@ -131,7 +136,6 @@ Partial Class frmEVProfileBasic
         '
         'NoKWSPLabel
         '
-        NoKWSPLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         NoKWSPLabel.AutoSize = True
         NoKWSPLabel.Location = New System.Drawing.Point(100, 228)
         NoKWSPLabel.Name = "NoKWSPLabel"
@@ -141,7 +145,6 @@ Partial Class frmEVProfileBasic
         '
         'TarikhLahirLabel
         '
-        TarikhLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         TarikhLahirLabel.AutoSize = True
         TarikhLahirLabel.Location = New System.Drawing.Point(100, 256)
         TarikhLahirLabel.Name = "TarikhLahirLabel"
@@ -151,7 +154,6 @@ Partial Class frmEVProfileBasic
         '
         'TempatLahirLabel
         '
-        TempatLahirLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         TempatLahirLabel.AutoSize = True
         TempatLahirLabel.Location = New System.Drawing.Point(100, 282)
         TempatLahirLabel.Name = "TempatLahirLabel"
@@ -161,7 +163,6 @@ Partial Class frmEVProfileBasic
         '
         'AlamatRumahLabel
         '
-        AlamatRumahLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         AlamatRumahLabel.AutoSize = True
         AlamatRumahLabel.Location = New System.Drawing.Point(100, 368)
         AlamatRumahLabel.Name = "AlamatRumahLabel"
@@ -171,7 +172,6 @@ Partial Class frmEVProfileBasic
         '
         'JantinaLabel
         '
-        JantinaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         JantinaLabel.AutoSize = True
         JantinaLabel.Location = New System.Drawing.Point(395, 147)
         JantinaLabel.Name = "JantinaLabel"
@@ -181,7 +181,6 @@ Partial Class frmEVProfileBasic
         '
         'AgamaLabel
         '
-        AgamaLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         AgamaLabel.AutoSize = True
         AgamaLabel.Location = New System.Drawing.Point(395, 174)
         AgamaLabel.Name = "AgamaLabel"
@@ -191,7 +190,6 @@ Partial Class frmEVProfileBasic
         '
         'Waris1Label
         '
-        Waris1Label.Anchor = System.Windows.Forms.AnchorStyles.None
         Waris1Label.AutoSize = True
         Waris1Label.Location = New System.Drawing.Point(395, 201)
         Waris1Label.Name = "Waris1Label"
@@ -201,7 +199,6 @@ Partial Class frmEVProfileBasic
         '
         'Waris2Label
         '
-        Waris2Label.Anchor = System.Windows.Forms.AnchorStyles.None
         Waris2Label.AutoSize = True
         Waris2Label.Location = New System.Drawing.Point(395, 228)
         Waris2Label.Name = "Waris2Label"
@@ -211,7 +208,6 @@ Partial Class frmEVProfileBasic
         '
         'KelayakanLabel
         '
-        KelayakanLabel.Anchor = System.Windows.Forms.AnchorStyles.None
         KelayakanLabel.AutoSize = True
         KelayakanLabel.Location = New System.Drawing.Point(395, 255)
         KelayakanLabel.Name = "KelayakanLabel"
@@ -235,9 +231,15 @@ Partial Class frmEVProfileBasic
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AgamaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.JantinaTableAdapter = Nothing
+        Me.TableAdapterManager.JawatanTableAdapter = Nothing
+        Me.TableAdapterManager.KelayakanTableAdapter = Nothing
         Me.TableAdapterManager.ProfileAdvanceTableAdapter = Nothing
         Me.TableAdapterManager.ProfileBasicTableAdapter = Me.ProfileBasicTableAdapter
+        Me.TableAdapterManager.StatusKerjaTableAdapter = Nothing
+        Me.TableAdapterManager.UmurPencenTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserTableAdapter = Nothing
         '
@@ -272,7 +274,7 @@ Partial Class frmEVProfileBasic
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(36, 22)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -355,17 +357,15 @@ Partial Class frmEVProfileBasic
         '
         'IDTextBox
         '
-        Me.IDTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(189, 117)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.ReadOnly = True
-        Me.IDTextBox.Size = New System.Drawing.Size(100, 21)
+        Me.IDTextBox.Size = New System.Drawing.Size(200, 21)
         Me.IDTextBox.TabIndex = 2
         '
         'NamaPegawaiTextBox
         '
-        Me.NamaPegawaiTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NamaPegawaiTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NamaPegawai", True))
         Me.NamaPegawaiTextBox.Location = New System.Drawing.Point(189, 144)
         Me.NamaPegawaiTextBox.Name = "NamaPegawaiTextBox"
@@ -374,7 +374,6 @@ Partial Class frmEVProfileBasic
         '
         'NoJbtTextBox
         '
-        Me.NoJbtTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NoJbtTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoJbt", True))
         Me.NoJbtTextBox.Location = New System.Drawing.Point(189, 171)
         Me.NoJbtTextBox.Name = "NoJbtTextBox"
@@ -383,7 +382,6 @@ Partial Class frmEVProfileBasic
         '
         'NoPengenalanTextBox
         '
-        Me.NoPengenalanTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NoPengenalanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoPengenalan", True))
         Me.NoPengenalanTextBox.Location = New System.Drawing.Point(189, 198)
         Me.NoPengenalanTextBox.Name = "NoPengenalanTextBox"
@@ -392,7 +390,6 @@ Partial Class frmEVProfileBasic
         '
         'NoKWSPTextBox
         '
-        Me.NoKWSPTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.NoKWSPTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "NoKWSP", True))
         Me.NoKWSPTextBox.Location = New System.Drawing.Point(189, 225)
         Me.NoKWSPTextBox.Name = "NoKWSPTextBox"
@@ -401,7 +398,6 @@ Partial Class frmEVProfileBasic
         '
         'TarikhLahirDateTimePicker
         '
-        Me.TarikhLahirDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TarikhLahirDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProfileBasicBindingSource, "TarikhLahir", True))
         Me.TarikhLahirDateTimePicker.Location = New System.Drawing.Point(189, 252)
         Me.TarikhLahirDateTimePicker.Name = "TarikhLahirDateTimePicker"
@@ -410,7 +406,6 @@ Partial Class frmEVProfileBasic
         '
         'TempatLahirTextBox
         '
-        Me.TempatLahirTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TempatLahirTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "TempatLahir", True))
         Me.TempatLahirTextBox.Location = New System.Drawing.Point(189, 279)
         Me.TempatLahirTextBox.Multiline = True
@@ -420,7 +415,6 @@ Partial Class frmEVProfileBasic
         '
         'AlamatRumahTextBox
         '
-        Me.AlamatRumahTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.AlamatRumahTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "AlamatRumah", True))
         Me.AlamatRumahTextBox.Location = New System.Drawing.Point(189, 365)
         Me.AlamatRumahTextBox.Multiline = True
@@ -430,8 +424,9 @@ Partial Class frmEVProfileBasic
         '
         'JantinaComboBox
         '
-        Me.JantinaComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.JantinaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Jantina", True))
+        Me.JantinaComboBox.DataSource = Me.JantinaBindingSource
+        Me.JantinaComboBox.DisplayMember = "Sex"
         Me.JantinaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.JantinaComboBox.FormattingEnabled = True
         Me.JantinaComboBox.Location = New System.Drawing.Point(484, 144)
@@ -441,8 +436,9 @@ Partial Class frmEVProfileBasic
         '
         'AgamaComboBox
         '
-        Me.AgamaComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.AgamaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Agama", True))
+        Me.AgamaComboBox.DataSource = Me.AgamaBindingSource
+        Me.AgamaComboBox.DisplayMember = "Agama"
         Me.AgamaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.AgamaComboBox.FormattingEnabled = True
         Me.AgamaComboBox.Location = New System.Drawing.Point(484, 171)
@@ -452,7 +448,6 @@ Partial Class frmEVProfileBasic
         '
         'Waris1TextBox
         '
-        Me.Waris1TextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Waris1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Waris1", True))
         Me.Waris1TextBox.Location = New System.Drawing.Point(484, 198)
         Me.Waris1TextBox.Name = "Waris1TextBox"
@@ -461,7 +456,6 @@ Partial Class frmEVProfileBasic
         '
         'Waris2TextBox
         '
-        Me.Waris2TextBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Waris2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Waris2", True))
         Me.Waris2TextBox.Location = New System.Drawing.Point(484, 225)
         Me.Waris2TextBox.Name = "Waris2TextBox"
@@ -470,46 +464,71 @@ Partial Class frmEVProfileBasic
         '
         'KelayakanComboBox
         '
-        Me.KelayakanComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.KelayakanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Kelayakan", True))
+        Me.KelayakanComboBox.DataSource = Me.KelayakanBindingSource
+        Me.KelayakanComboBox.DisplayMember = "Kelulusan"
+        Me.KelayakanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.KelayakanComboBox.FormattingEnabled = True
         Me.KelayakanComboBox.Location = New System.Drawing.Point(484, 252)
         Me.KelayakanComboBox.Name = "KelayakanComboBox"
         Me.KelayakanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.KelayakanComboBox.TabIndex = 26
         '
-        'btnNext
-        '
-        Me.btnNext.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnNext.Location = New System.Drawing.Point(652, 527)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(120, 23)
-        Me.btnNext.TabIndex = 27
-        Me.btnNext.Text = "&Selanjut >"
-        Me.btnNext.UseVisualStyleBackColor = True
-        '
         'btnUpdate
         '
-        Me.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnUpdate.Location = New System.Drawing.Point(571, 527)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate.TabIndex = 28
+        Me.btnUpdate.TabIndex = 27
         Me.btnUpdate.Text = "&Kemaskini"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'TimeSearch
+        'btnNext
         '
-        Me.TimeSearch.Enabled = True
-        Me.TimeSearch.Interval = 500
+        Me.btnNext.Location = New System.Drawing.Point(652, 527)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(120, 23)
+        Me.btnNext.TabIndex = 28
+        Me.btnNext.Text = "&Seterusnya >"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'TimerIdSearch
+        '
+        '
+        'JantinaBindingSource
+        '
+        Me.JantinaBindingSource.DataMember = "Jantina"
+        Me.JantinaBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'JantinaTableAdapter
+        '
+        Me.JantinaTableAdapter.ClearBeforeFill = True
+        '
+        'AgamaBindingSource
+        '
+        Me.AgamaBindingSource.DataMember = "Agama"
+        Me.AgamaBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'AgamaTableAdapter
+        '
+        Me.AgamaTableAdapter.ClearBeforeFill = True
+        '
+        'KelayakanBindingSource
+        '
+        Me.KelayakanBindingSource.DataMember = "Kelayakan"
+        Me.KelayakanBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'KelayakanTableAdapter
+        '
+        Me.KelayakanTableAdapter.ClearBeforeFill = True
         '
         'frmEVProfileBasic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(792, 573)
-        Me.Controls.Add(Me.btnUpdate)
+        Me.ClientSize = New System.Drawing.Size(784, 562)
         Me.Controls.Add(Me.btnNext)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(NamaPegawaiLabel)
@@ -541,12 +560,15 @@ Partial Class frmEVProfileBasic
         Me.MinimumSize = New System.Drawing.Size(800, 600)
         Me.Name = "frmEVProfileBasic"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmEVBasicProfile"
+        Me.Text = "frmEVProfileBasic"
         CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfileBasicBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfileBasicBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProfileBasicBindingNavigator.ResumeLayout(False)
         Me.ProfileBasicBindingNavigator.PerformLayout()
+        CType(Me.JantinaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AgamaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KelayakanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -581,7 +603,13 @@ Partial Class frmEVProfileBasic
     Friend WithEvents Waris1TextBox As System.Windows.Forms.TextBox
     Friend WithEvents Waris2TextBox As System.Windows.Forms.TextBox
     Friend WithEvents KelayakanComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents btnNext As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
-    Friend WithEvents TimeSearch As System.Windows.Forms.Timer
+    Friend WithEvents btnNext As System.Windows.Forms.Button
+    Friend WithEvents TimerIdSearch As System.Windows.Forms.Timer
+    Friend WithEvents JantinaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents JantinaTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.JantinaTableAdapter
+    Friend WithEvents AgamaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents AgamaTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.AgamaTableAdapter
+    Friend WithEvents KelayakanBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents KelayakanTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.KelayakanTableAdapter
 End Class

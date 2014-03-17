@@ -1,6 +1,14 @@
 ﻿Public Class frmProfileAdvance
 
     Private Sub frmProfileAdvance_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.CutiBerkait' table. You can move, or remove it, as needed.
+        Me.CutiBerkaitTableAdapter.Fill(Me.EmployeeDataSEDS.CutiBerkait)
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.UmurPencen' table. You can move, or remove it, as needed.
+        Me.UmurPencenTableAdapter.Fill(Me.EmployeeDataSEDS.UmurPencen)
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.Jawatan' table. You can move, or remove it, as needed.
+        Me.JawatanTableAdapter.Fill(Me.EmployeeDataSEDS.Jawatan)
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.StatusKerja' table. You can move, or remove it, as needed.
+        Me.StatusKerjaTableAdapter.Fill(Me.EmployeeDataSEDS.StatusKerja)
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.ProfileAdvance' table. You can move, or remove it, as needed.
         Me.ProfileAdvanceTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileAdvance)
         Me.Text = "Daftar Pekerja Baru (Teperinci)"

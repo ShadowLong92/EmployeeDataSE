@@ -80,16 +80,16 @@
     <Compile Include="frmAbout.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEVProfileBasic.Designer.vb">
-      <DependentUpon>frmEVProfileBasic.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmEVProfileBasic.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmEVProfileAdvance.Designer.vb">
       <DependentUpon>frmEVProfileAdvance.vb</DependentUpon>
     </Compile>
     <Compile Include="frmEVProfileAdvance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEVProfileBasic.Designer.vb">
+      <DependentUpon>frmEVProfileBasic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEVProfileBasic.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">

@@ -34,6 +34,8 @@ Partial Class frmMainWindow
         Me.ssBar = New System.Windows.Forms.StatusStrip()
         Me.tsslRAM = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TimerRAM = New System.Windows.Forms.Timer(Me.components)
+        Me.tsslAppVer = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslWelcome = New System.Windows.Forms.ToolStripStatusLabel()
         Me.menuBar.SuspendLayout()
         Me.ssBar.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class frmMainWindow
         '
         Me.tsmiExit.Name = "tsmiExit"
         Me.tsmiExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(144, 22)
         Me.tsmiExit.Text = "&Keluar"
         '
         'tsmiWork
@@ -99,22 +101,38 @@ Partial Class frmMainWindow
         'ssBar
         '
         Me.ssBar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ssBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslRAM})
+        Me.ssBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsslWelcome, Me.tsslAppVer, Me.tsslRAM})
         Me.ssBar.Location = New System.Drawing.Point(0, 551)
         Me.ssBar.Name = "ssBar"
+        Me.ssBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
         Me.ssBar.Size = New System.Drawing.Size(1016, 22)
         Me.ssBar.TabIndex = 3
         Me.ssBar.Text = "StatusStrip1"
         '
         'tsslRAM
         '
+        Me.tsslRAM.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.tsslRAM.Name = "tsslRAM"
-        Me.tsslRAM.Size = New System.Drawing.Size(99, 17)
+        Me.tsslRAM.Size = New System.Drawing.Size(103, 17)
         Me.tsslRAM.Text = "Free Physical RAM:"
         '
         'TimerRAM
         '
         Me.TimerRAM.Enabled = True
+        '
+        'tsslAppVer
+        '
+        Me.tsslAppVer.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.tsslAppVer.Name = "tsslAppVer"
+        Me.tsslAppVer.Size = New System.Drawing.Size(65, 17)
+        Me.tsslAppVer.Text = "AppVersion"
+        '
+        'tsslWelcome
+        '
+        Me.tsslWelcome.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right
+        Me.tsslWelcome.Name = "tsslWelcome"
+        Me.tsslWelcome.Size = New System.Drawing.Size(107, 17)
+        Me.tsslWelcome.Text = "Welcome back user!"
         '
         'frmMainWindow
         '
@@ -151,5 +169,7 @@ Partial Class frmMainWindow
     Friend WithEvents ssBar As System.Windows.Forms.StatusStrip
     Friend WithEvents tsslRAM As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents TimerRAM As System.Windows.Forms.Timer
+    Friend WithEvents tsslAppVer As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents tsslWelcome As System.Windows.Forms.ToolStripStatusLabel
 
 End Class

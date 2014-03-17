@@ -4,6 +4,9 @@
         Me.Text = My.Application.Info.Title + " (Ver.: " + My.Application.Info.Version.ToString + ")"
         Me.Icon = My.Resources.user
 
+        tsslWelcome.Text = "Welcome back " + frmLogin.txtUserName.Text + "!"
+        tsslAppVer.Text = My.Application.Info.ProductName + " (Version: " + My.Application.Info.Version.ToString + ")"
+
         MakeMdiParent()
     End Sub
 
@@ -11,6 +14,7 @@
         Dim RageQuit = MessageBox.Show("Anda pasti mahu keluar?", "Logkeluar", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2)
 
         If RageQuit = Windows.Forms.DialogResult.Yes Then
+            frmLogin.txtPassWord.Text = ""
             frmLogin.Show()
         Else
             e.Cancel = True

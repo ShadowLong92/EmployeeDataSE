@@ -10,6 +10,12 @@ Public Class frmEVProfileBasic
     End Sub
 
     Private Sub frmEVProfileBasic_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.Kelayakan' table. You can move, or remove it, as needed.
+        Me.KelayakanTableAdapter.Fill(Me.EmployeeDataSEDS.Kelayakan)
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.Agama' table. You can move, or remove it, as needed.
+        Me.AgamaTableAdapter.Fill(Me.EmployeeDataSEDS.Agama)
+        'TODO: This line of code loads data into the 'EmployeeDataSEDS.Jantina' table. You can move, or remove it, as needed.
+        Me.JantinaTableAdapter.Fill(Me.EmployeeDataSEDS.Jantina)
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.ProfileBasic' table. You can move, or remove it, as needed.
         Me.ProfileBasicTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileBasic)
 
@@ -17,40 +23,21 @@ Public Class frmEVProfileBasic
         Me.Icon = My.Resources.user
         MakeMdiParent()
 
+        'Interface load glitch
+        TimerIdSearch.Start()
+
+    End Sub
+
+    Private Sub TimerIdSearch_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerIdSearch.Tick
         Do Until SID = IDTextBox.Text
             BindingNavigatorMoveNextItem.PerformClick()
         Loop
 
-        With JantinaComboBox.Items
-            .Add(Choose)
-            .Add("Lelaki")
-            .Add("Perempuan")
-        End With
-        With AgamaComboBox.Items
-            .Add(Choose)
-            .Add("Islam")
-            .Add("Buddha")
-            .Add("Hindu")
-            .Add("Kristian")
-            .Add("Lain-lain")
-        End With
-        With KelayakanComboBox.Items
-            .Add(Choose)
-            .Add("SPM")
-            .Add("Diploma")
-            .Add("Ijazah")
-            .Add("Master")
-            .Add("PhD")
-        End With
+        TimerIdSearch.Stop()
 
     End Sub
 
     Private Sub btnUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdate.Click
-        If JantinaComboBox.SelectedIndex <= 0 Or AgamaComboBox.SelectedIndex <= 0 Then
-            MessageBox.Show("Maklumat tidak lengkap!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        End If
-
         Try
             ProfileBasicBindingNavigatorSaveItem.PerformClick()
 
@@ -81,5 +68,6 @@ Public Class frmEVProfileBasic
 
         Me.Close()
         frmEVProfileAdvance.Show()
+
     End Sub
 End Class

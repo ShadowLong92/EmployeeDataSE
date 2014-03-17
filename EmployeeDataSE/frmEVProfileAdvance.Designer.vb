@@ -24,7 +24,6 @@ Partial Class frmEVProfileAdvance
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim IDLabel As System.Windows.Forms.Label
-        Dim StatusLabel As System.Windows.Forms.Label
         Dim TarikhDilantikLabel As System.Windows.Forms.Label
         Dim TarikhPengesahanLantikanLabel As System.Windows.Forms.Label
         Dim DisahkanDalamJawatanLabel As System.Windows.Forms.Label
@@ -35,13 +34,12 @@ Partial Class frmEVProfileAdvance
         Dim APCLabel As System.Windows.Forms.Label
         Dim TindakkanTatatertibLabel As System.Windows.Forms.Label
         Dim SejarahLantikanLabel As System.Windows.Forms.Label
+        Dim StatusLabel1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEVProfileAdvance))
-        Me.EmployeeDataSEDS = New EmployeeDataSE.EmployeeDataSEDS()
-        Me.ProfileAdvanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProfileAdvanceTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.ProfileAdvanceTableAdapter()
-        Me.TableAdapterManager = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager()
         Me.ProfileAdvanceBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.ProfileAdvanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeDataSEDS = New EmployeeDataSE.EmployeeDataSEDS()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -54,7 +52,6 @@ Partial Class frmEVProfileAdvance
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ProfileAdvanceBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.IDTextBox = New System.Windows.Forms.TextBox()
-        Me.StatusTextBox = New System.Windows.Forms.TextBox()
         Me.TarikhDilantikDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.TarikhPengesahanLantikanDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.DisahkanDalamJawatanComboBox = New System.Windows.Forms.ComboBox()
@@ -67,8 +64,18 @@ Partial Class frmEVProfileAdvance
         Me.SejarahLantikanTextBox = New System.Windows.Forms.TextBox()
         Me.btnReport = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.ProfileAdvanceTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.ProfileAdvanceTableAdapter()
+        Me.TableAdapterManager = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager()
+        Me.StatusComboBox = New System.Windows.Forms.ComboBox()
+        Me.StatusKerjaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StatusKerjaTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.StatusKerjaTableAdapter()
+        Me.JawatanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JawatanTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.JawatanTableAdapter()
+        Me.UmurPencenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UmurPencenTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.UmurPencenTableAdapter()
+        Me.CutiBerkaitBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CutiBerkaitTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.CutiBerkaitTableAdapter()
         IDLabel = New System.Windows.Forms.Label()
-        StatusLabel = New System.Windows.Forms.Label()
         TarikhDilantikLabel = New System.Windows.Forms.Label()
         TarikhPengesahanLantikanLabel = New System.Windows.Forms.Label()
         DisahkanDalamJawatanLabel = New System.Windows.Forms.Label()
@@ -79,10 +86,15 @@ Partial Class frmEVProfileAdvance
         APCLabel = New System.Windows.Forms.Label()
         TindakkanTatatertibLabel = New System.Windows.Forms.Label()
         SejarahLantikanLabel = New System.Windows.Forms.Label()
-        CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProfileAdvanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        StatusLabel1 = New System.Windows.Forms.Label()
         CType(Me.ProfileAdvanceBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfileAdvanceBindingNavigator.SuspendLayout()
+        CType(Me.ProfileAdvanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatusKerjaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JawatanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UmurPencenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CutiBerkaitBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDLabel
@@ -93,15 +105,6 @@ Partial Class frmEVProfileAdvance
         IDLabel.Size = New System.Drawing.Size(22, 13)
         IDLabel.TabIndex = 1
         IDLabel.Text = "ID:"
-        '
-        'StatusLabel
-        '
-        StatusLabel.AutoSize = True
-        StatusLabel.Location = New System.Drawing.Point(38, 107)
-        StatusLabel.Name = "StatusLabel"
-        StatusLabel.Size = New System.Drawing.Size(42, 13)
-        StatusLabel.TabIndex = 3
-        StatusLabel.Text = "Status:"
         '
         'TarikhDilantikLabel
         '
@@ -193,27 +196,14 @@ Partial Class frmEVProfileAdvance
         SejarahLantikanLabel.TabIndex = 23
         SejarahLantikanLabel.Text = "Sejarah Lantikan:"
         '
-        'EmployeeDataSEDS
+        'StatusLabel1
         '
-        Me.EmployeeDataSEDS.DataSetName = "EmployeeDataSEDS"
-        Me.EmployeeDataSEDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProfileAdvanceBindingSource
-        '
-        Me.ProfileAdvanceBindingSource.DataMember = "ProfileAdvance"
-        Me.ProfileAdvanceBindingSource.DataSource = Me.EmployeeDataSEDS
-        '
-        'ProfileAdvanceTableAdapter
-        '
-        Me.ProfileAdvanceTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.ProfileAdvanceTableAdapter = Me.ProfileAdvanceTableAdapter
-        Me.TableAdapterManager.ProfileBasicTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UserTableAdapter = Nothing
+        StatusLabel1.AutoSize = True
+        StatusLabel1.Location = New System.Drawing.Point(38, 107)
+        StatusLabel1.Name = "StatusLabel1"
+        StatusLabel1.Size = New System.Drawing.Size(42, 13)
+        StatusLabel1.TabIndex = 3
+        StatusLabel1.Text = "Status:"
         '
         'ProfileAdvanceBindingNavigator
         '
@@ -242,6 +232,16 @@ Partial Class frmEVProfileAdvance
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'ProfileAdvanceBindingSource
+        '
+        Me.ProfileAdvanceBindingSource.DataMember = "ProfileAdvance"
+        Me.ProfileAdvanceBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'EmployeeDataSEDS
+        '
+        Me.EmployeeDataSEDS.DataSetName = "EmployeeDataSEDS"
+        Me.EmployeeDataSEDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -336,14 +336,6 @@ Partial Class frmEVProfileAdvance
         Me.IDTextBox.Size = New System.Drawing.Size(100, 21)
         Me.IDTextBox.TabIndex = 2
         '
-        'StatusTextBox
-        '
-        Me.StatusTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "Status", True))
-        Me.StatusTextBox.Location = New System.Drawing.Point(189, 104)
-        Me.StatusTextBox.Name = "StatusTextBox"
-        Me.StatusTextBox.Size = New System.Drawing.Size(200, 21)
-        Me.StatusTextBox.TabIndex = 4
-        '
         'TarikhDilantikDateTimePicker
         '
         Me.TarikhDilantikDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProfileAdvanceBindingSource, "TarikhDilantik", True))
@@ -363,6 +355,9 @@ Partial Class frmEVProfileAdvance
         'DisahkanDalamJawatanComboBox
         '
         Me.DisahkanDalamJawatanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "DisahkanDalamJawatan", True))
+        Me.DisahkanDalamJawatanComboBox.DataSource = Me.JawatanBindingSource
+        Me.DisahkanDalamJawatanComboBox.DisplayMember = "Jawatan"
+        Me.DisahkanDalamJawatanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DisahkanDalamJawatanComboBox.FormattingEnabled = True
         Me.DisahkanDalamJawatanComboBox.Location = New System.Drawing.Point(189, 185)
         Me.DisahkanDalamJawatanComboBox.Name = "DisahkanDalamJawatanComboBox"
@@ -372,6 +367,9 @@ Partial Class frmEVProfileAdvance
         'PilihanUmurPersaraanComboBox
         '
         Me.PilihanUmurPersaraanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "PilihanUmurPersaraan", True))
+        Me.PilihanUmurPersaraanComboBox.DataSource = Me.UmurPencenBindingSource
+        Me.PilihanUmurPersaraanComboBox.DisplayMember = "Umur"
+        Me.PilihanUmurPersaraanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PilihanUmurPersaraanComboBox.FormattingEnabled = True
         Me.PilihanUmurPersaraanComboBox.Location = New System.Drawing.Point(189, 212)
         Me.PilihanUmurPersaraanComboBox.Name = "PilihanUmurPersaraanComboBox"
@@ -389,6 +387,9 @@ Partial Class frmEVProfileAdvance
         'CutiYangBerkaitanComboBox
         '
         Me.CutiYangBerkaitanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "CutiYangBerkaitan", True))
+        Me.CutiYangBerkaitanComboBox.DataSource = Me.CutiBerkaitBindingSource
+        Me.CutiYangBerkaitanComboBox.DisplayMember = "JenisCuti"
+        Me.CutiYangBerkaitanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CutiYangBerkaitanComboBox.FormattingEnabled = True
         Me.CutiYangBerkaitanComboBox.Location = New System.Drawing.Point(189, 266)
         Me.CutiYangBerkaitanComboBox.Name = "CutiYangBerkaitanComboBox"
@@ -449,17 +450,84 @@ Partial Class frmEVProfileAdvance
         Me.btnUpdate.Text = "Ke&maskini"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'ProfileAdvanceTableAdapter
+        '
+        Me.ProfileAdvanceTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AgamaTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CutiBerkaitTableAdapter = Nothing
+        Me.TableAdapterManager.JantinaTableAdapter = Nothing
+        Me.TableAdapterManager.JawatanTableAdapter = Nothing
+        Me.TableAdapterManager.KelayakanTableAdapter = Nothing
+        Me.TableAdapterManager.ProfileAdvanceTableAdapter = Me.ProfileAdvanceTableAdapter
+        Me.TableAdapterManager.ProfileBasicTableAdapter = Nothing
+        Me.TableAdapterManager.StatusKerjaTableAdapter = Nothing
+        Me.TableAdapterManager.UmurPencenTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = EmployeeDataSE.EmployeeDataSEDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UserTableAdapter = Nothing
+        '
+        'StatusComboBox
+        '
+        Me.StatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileAdvanceBindingSource, "Status", True))
+        Me.StatusComboBox.DataSource = Me.StatusKerjaBindingSource
+        Me.StatusComboBox.DisplayMember = "Status"
+        Me.StatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.StatusComboBox.FormattingEnabled = True
+        Me.StatusComboBox.Location = New System.Drawing.Point(189, 104)
+        Me.StatusComboBox.Name = "StatusComboBox"
+        Me.StatusComboBox.Size = New System.Drawing.Size(200, 21)
+        Me.StatusComboBox.TabIndex = 4
+        '
+        'StatusKerjaBindingSource
+        '
+        Me.StatusKerjaBindingSource.DataMember = "StatusKerja"
+        Me.StatusKerjaBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'StatusKerjaTableAdapter
+        '
+        Me.StatusKerjaTableAdapter.ClearBeforeFill = True
+        '
+        'JawatanBindingSource
+        '
+        Me.JawatanBindingSource.DataMember = "Jawatan"
+        Me.JawatanBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'JawatanTableAdapter
+        '
+        Me.JawatanTableAdapter.ClearBeforeFill = True
+        '
+        'UmurPencenBindingSource
+        '
+        Me.UmurPencenBindingSource.DataMember = "UmurPencen"
+        Me.UmurPencenBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'UmurPencenTableAdapter
+        '
+        Me.UmurPencenTableAdapter.ClearBeforeFill = True
+        '
+        'CutiBerkaitBindingSource
+        '
+        Me.CutiBerkaitBindingSource.DataMember = "CutiBerkait"
+        Me.CutiBerkaitBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
+        'CutiBerkaitTableAdapter
+        '
+        Me.CutiBerkaitTableAdapter.ClearBeforeFill = True
+        '
         'frmEVProfileAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 562)
+        Me.Controls.Add(StatusLabel1)
+        Me.Controls.Add(Me.StatusComboBox)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
-        Me.Controls.Add(StatusLabel)
-        Me.Controls.Add(Me.StatusTextBox)
         Me.Controls.Add(TarikhDilantikLabel)
         Me.Controls.Add(Me.TarikhDilantikDateTimePicker)
         Me.Controls.Add(TarikhPengesahanLantikanLabel)
@@ -486,11 +554,15 @@ Partial Class frmEVProfileAdvance
         Me.Name = "frmEVProfileAdvance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmEVProfileAdvance"
-        CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProfileAdvanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfileAdvanceBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProfileAdvanceBindingNavigator.ResumeLayout(False)
         Me.ProfileAdvanceBindingNavigator.PerformLayout()
+        CType(Me.ProfileAdvanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeDataSEDS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatusKerjaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JawatanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UmurPencenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CutiBerkaitBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -513,7 +585,6 @@ Partial Class frmEVProfileAdvance
     Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ProfileAdvanceBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
     Friend WithEvents IDTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents StatusTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TarikhDilantikDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents TarikhPengesahanLantikanDateTimePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents DisahkanDalamJawatanComboBox As System.Windows.Forms.ComboBox
@@ -526,4 +597,13 @@ Partial Class frmEVProfileAdvance
     Friend WithEvents SejarahLantikanTextBox As System.Windows.Forms.TextBox
     Friend WithEvents btnReport As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
+    Friend WithEvents StatusComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents StatusKerjaBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents StatusKerjaTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.StatusKerjaTableAdapter
+    Friend WithEvents JawatanBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents JawatanTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.JawatanTableAdapter
+    Friend WithEvents UmurPencenBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents UmurPencenTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.UmurPencenTableAdapter
+    Friend WithEvents CutiBerkaitBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents CutiBerkaitTableAdapter As EmployeeDataSE.EmployeeDataSEDSTableAdapters.CutiBerkaitTableAdapter
 End Class
