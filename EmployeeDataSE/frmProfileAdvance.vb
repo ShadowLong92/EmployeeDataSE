@@ -1,5 +1,12 @@
 ﻿Public Class frmProfileAdvance
 
+    Private Sub ProfileAdvanceBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileAdvanceBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.ProfileAdvanceBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.EmployeeDataSEDS)
+
+    End Sub
+
     Private Sub frmProfileAdvance_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.CutiBerkait' table. You can move, or remove it, as needed.
         Me.CutiBerkaitTableAdapter.Fill(Me.EmployeeDataSEDS.CutiBerkait)
@@ -11,30 +18,29 @@
         Me.StatusKerjaTableAdapter.Fill(Me.EmployeeDataSEDS.StatusKerja)
         'TODO: This line of code loads data into the 'EmployeeDataSEDS.ProfileAdvance' table. You can move, or remove it, as needed.
         Me.ProfileAdvanceTableAdapter.Fill(Me.EmployeeDataSEDS.ProfileAdvance)
+
         Me.Text = "Daftar Pekerja Baru (Teperinci)"
         Me.Icon = My.Resources.user
         MakeMdiParent()
 
         BindingNavigatorAddNewItem.PerformClick()
         TimeAutoFetch.Start()
-        With PilihanUmurPersaraanComboBox.Items
-            .Add("50")
-            .Add("58")
-            .Add("60")
-        End With
-
-    End Sub
-
-    Private Sub ProfileAdvanceBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProfileAdvanceBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.ProfileAdvanceBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.EmployeeDataSEDS)
-
     End Sub
 
     Private Sub TimeAutoFetch_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimeAutoFetch.Tick
         IDTextBox.Text = UID.ToString
+        StatusComboBox.SelectedIndex = -1
+        DisahkanDalamJawatanComboBox.SelectedIndex = -1
+        PilihanUmurPersaraanComboBox.SelectedIndex = 0
+        CutiYangBerkaitanComboBox.SelectedIndex = -1
+
         TimeAutoFetch.Stop()
+    End Sub
+
+    Private Sub PilihanUmurPersaraanComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PilihanUmurPersaraanComboBox.SelectedIndexChanged
+        With TarikhPersaraanWajibDateTimePicker
+            .Value = New Date(Now.Year + (Integer.Parse(PilihanUmurPersaraanComboBox.Text) - Age), BMonth, BDay)
+        End With
     End Sub
 
     Private Sub btnFinish_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFinish.Click
@@ -48,11 +54,7 @@
                 Me.Close()
             End If
         Catch ex As Exception
-            MessageBox.Show("Tidak sah!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
-    End Sub
-
-    Private Sub PilihanUmurPersaraanComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PilihanUmurPersaraanComboBox.SelectedIndexChanged
-        TarikhPersaraanWajibDateTimePicker.Value = New Date(Now.Year + Integer.Parse(PilihanUmurPersaraanComboBox.Text) - Age, TarikhPengesahanLantikanDateTimePicker.Value.Month, TarikhPengesahanLantikanDateTimePicker.Value.Day)
     End Sub
 End Class

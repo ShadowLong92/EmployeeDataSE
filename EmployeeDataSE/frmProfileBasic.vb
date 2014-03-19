@@ -28,7 +28,12 @@
     End Sub
 
     Private Sub btnNext_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNext.Click
-        Age = Date.Now.Year - TarikhLahirDateTimePicker.Value.Year
+        With TarikhLahirDateTimePicker
+            Age = Date.Now.Year - .Value.Year
+            BDay = .Value.Day
+            BMonth = .Value.Month
+        End With
+
         ProfileBasicBindingNavigatorSaveItem.PerformClick()
 
         Me.Close()
@@ -44,6 +49,12 @@
 
     Private Sub TimerId_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerId.Tick
         IDTextBox.Text = UniqueId().ToString
+        NoJbtTextBox.Text = "250"
+        TarikhLahirDateTimePicker.Value = Date.Now
+        JantinaComboBox.SelectedIndex = 0
+        AgamaComboBox.SelectedIndex = 0
+        KelayakanComboBox.SelectedIndex = 0
+
         TimerId.Stop()
     End Sub
 End Class

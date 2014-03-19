@@ -58,6 +58,5 @@ Public Class frmEVProfileAdvance
 
         Me.Close()
         frmReport.Show()
-
     End Sub
 End Class

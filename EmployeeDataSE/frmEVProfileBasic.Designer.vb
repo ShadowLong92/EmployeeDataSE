@@ -63,18 +63,18 @@ Partial Class frmEVProfileBasic
         Me.TempatLahirTextBox = New System.Windows.Forms.TextBox()
         Me.AlamatRumahTextBox = New System.Windows.Forms.TextBox()
         Me.JantinaComboBox = New System.Windows.Forms.ComboBox()
+        Me.JantinaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AgamaComboBox = New System.Windows.Forms.ComboBox()
+        Me.AgamaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Waris1TextBox = New System.Windows.Forms.TextBox()
         Me.Waris2TextBox = New System.Windows.Forms.TextBox()
         Me.KelayakanComboBox = New System.Windows.Forms.ComboBox()
+        Me.KelayakanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.TimerIdSearch = New System.Windows.Forms.Timer(Me.components)
-        Me.JantinaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.JantinaTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.JantinaTableAdapter()
-        Me.AgamaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AgamaTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.AgamaTableAdapter()
-        Me.KelayakanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KelayakanTableAdapter = New EmployeeDataSE.EmployeeDataSEDSTableAdapters.KelayakanTableAdapter()
         IDLabel = New System.Windows.Forms.Label()
         NamaPegawaiLabel = New System.Windows.Forms.Label()
@@ -121,18 +121,18 @@ Partial Class frmEVProfileBasic
         NoJbtLabel.AutoSize = True
         NoJbtLabel.Location = New System.Drawing.Point(100, 174)
         NoJbtLabel.Name = "NoJbtLabel"
-        NoJbtLabel.Size = New System.Drawing.Size(42, 13)
+        NoJbtLabel.Size = New System.Drawing.Size(66, 13)
         NoJbtLabel.TabIndex = 5
-        NoJbtLabel.Text = "No Jbt:"
+        NoJbtLabel.Text = "No Jabatan:"
         '
         'NoPengenalanLabel
         '
         NoPengenalanLabel.AutoSize = True
         NoPengenalanLabel.Location = New System.Drawing.Point(100, 201)
         NoPengenalanLabel.Name = "NoPengenalanLabel"
-        NoPengenalanLabel.Size = New System.Drawing.Size(83, 13)
+        NoPengenalanLabel.Size = New System.Drawing.Size(43, 13)
         NoPengenalanLabel.TabIndex = 7
-        NoPengenalanLabel.Text = "No Pengenalan:"
+        NoPengenalanLabel.Text = "No K/P:"
         '
         'NoKWSPLabel
         '
@@ -233,6 +233,7 @@ Partial Class frmEVProfileBasic
         '
         Me.TableAdapterManager.AgamaTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.CutiBerkaitTableAdapter = Nothing
         Me.TableAdapterManager.JantinaTableAdapter = Nothing
         Me.TableAdapterManager.JawatanTableAdapter = Nothing
         Me.TableAdapterManager.KelayakanTableAdapter = Nothing
@@ -434,6 +435,11 @@ Partial Class frmEVProfileBasic
         Me.JantinaComboBox.Size = New System.Drawing.Size(200, 21)
         Me.JantinaComboBox.TabIndex = 18
         '
+        'JantinaBindingSource
+        '
+        Me.JantinaBindingSource.DataMember = "Jantina"
+        Me.JantinaBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
         'AgamaComboBox
         '
         Me.AgamaComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProfileBasicBindingSource, "Agama", True))
@@ -445,6 +451,11 @@ Partial Class frmEVProfileBasic
         Me.AgamaComboBox.Name = "AgamaComboBox"
         Me.AgamaComboBox.Size = New System.Drawing.Size(200, 21)
         Me.AgamaComboBox.TabIndex = 20
+        '
+        'AgamaBindingSource
+        '
+        Me.AgamaBindingSource.DataMember = "Agama"
+        Me.AgamaBindingSource.DataSource = Me.EmployeeDataSEDS
         '
         'Waris1TextBox
         '
@@ -474,6 +485,11 @@ Partial Class frmEVProfileBasic
         Me.KelayakanComboBox.Size = New System.Drawing.Size(200, 21)
         Me.KelayakanComboBox.TabIndex = 26
         '
+        'KelayakanBindingSource
+        '
+        Me.KelayakanBindingSource.DataMember = "Kelayakan"
+        Me.KelayakanBindingSource.DataSource = Me.EmployeeDataSEDS
+        '
         'btnUpdate
         '
         Me.btnUpdate.Location = New System.Drawing.Point(571, 527)
@@ -495,28 +511,13 @@ Partial Class frmEVProfileBasic
         'TimerIdSearch
         '
         '
-        'JantinaBindingSource
-        '
-        Me.JantinaBindingSource.DataMember = "Jantina"
-        Me.JantinaBindingSource.DataSource = Me.EmployeeDataSEDS
-        '
         'JantinaTableAdapter
         '
         Me.JantinaTableAdapter.ClearBeforeFill = True
         '
-        'AgamaBindingSource
-        '
-        Me.AgamaBindingSource.DataMember = "Agama"
-        Me.AgamaBindingSource.DataSource = Me.EmployeeDataSEDS
-        '
         'AgamaTableAdapter
         '
         Me.AgamaTableAdapter.ClearBeforeFill = True
-        '
-        'KelayakanBindingSource
-        '
-        Me.KelayakanBindingSource.DataMember = "Kelayakan"
-        Me.KelayakanBindingSource.DataSource = Me.EmployeeDataSEDS
         '
         'KelayakanTableAdapter
         '

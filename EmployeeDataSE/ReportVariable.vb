@@ -3,6 +3,8 @@
     Public Choose As String = "Sila Pilih..."
     Public SID As String = ""
     Public Age As Integer = 0
+    Public BDay As Integer = 1
+    Public BMonth As Integer = 1
 
     ' Var Profile Basic
     Public Id As String

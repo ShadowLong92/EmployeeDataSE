@@ -1,4 +1,6 @@
-﻿Class frmReport
+﻿Imports System.Text.RegularExpressions
+
+Class frmReport
 
     Private Sub frmReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = My.Resources.user
@@ -10,29 +12,29 @@
     Private Sub GenerateReport()
         Dim Report As String
 
-        Report = "Staff ID: " + Id + " (" + Status + ")" + vbNewLine + vbNewLine + _
-            "Nama: " + UserName + vbNewLine + _
-            "No. Jabatan: " + NoJbt + vbNewLine + _
-            "No. Pengenalan: " + UIC + vbNewLine + _
-            "No. KWSP: " + KWSP + vbNewLine + _
-            "Tarikh Dilantik: " + DateAppointed + vbNewLine + _
-            "Pengesahan Lantikan: " + DateApproved + vbNewLine + _
-            "Disahkan dalam Jawatan: " + Approved + vbNewLine + _
-            "Pilihan Umur Persaraan: " + AgeChoicePensions + vbNewLine + _
-            "Tarikh Persaraan Wajib: " + DatePensions + vbNewLine + _
-            "Cuti yang Berkaitan: " + RelatedHoliday + vbNewLine + _
-            "Tarikh Lahir: " + BDate + vbNewLine + _
-            "Tempat Lahir: " + BAddress + vbNewLine + _
-            "Alamat Rumah: " + Address + vbNewLine + _
-            "Jantina: " + Sex + vbNewLine + _
-            "Agama: " + Religion + vbNewLine + _
-            "Waris 1: " + Waris1 + vbNewLine + _
-            "Waris 2: " + Waris2 + vbNewLine + _
-            "Kelayakan: " + Qualified + vbNewLine + _
-            "Kursus - Kursus: " + KK + vbNewLine + _
-            "APC: " + APC + vbNewLine + _
-            "Tindakkan Tatatertib: " + TT + vbNewLine + _
-            "Sejarah Lantikan: " + SL
+        Report = Regex.Unescape("Staff ID: " + Id + " (" + Status + ")\n" + _
+            "Nama: " + UserName + "\n" + _
+            "No. Jabatan: " + NoJbt + "\n" + _
+            "No. Pengenalan: " + UIC + "\n" + _
+            "No. KWSP: " + KWSP + "\n" + _
+            "Tarikh Dilantik: " + DateAppointed + "\n" + _
+            "Pengesahan Lantikan: " + DateApproved + "\n" + _
+            "Disahkan dalam Jawatan: " + Approved + "\n" + _
+            "Pilihan Umur Persaraan: " + AgeChoicePensions + "\n" + _
+            "Tarikh Persaraan Wajib: " + DatePensions + "\n" + _
+            "Cuti yang Berkaitan: " + RelatedHoliday + "\n" + _
+            "Tarikh Lahir: " + BDate + "\n" + _
+            "Tempat Lahir: " + BAddress + "\n" + _
+            "Alamat Rumah: " + Address + "\n" + _
+            "Jantina: " + Sex + "\n" + _
+            "Agama: " + Religion + "\n" + _
+            "Waris 1: " + Waris1 + "\n" + _
+            "Waris 2: " + Waris2 + "\n" + _
+            "Kelayakan: " + Qualified + "\n\n" + _
+            "Kursus - Kursus: \n" + KK + "\n\n" + _
+            "APC: \n" + APC + "\n\n" + _
+            "Tindakkan Tatatertib: \n" + TT + "\n\n" + _
+            "Sejarah Lantikan: \n" + SL + "\n")
 
         My.Computer.FileSystem.WriteAllText(My.Application.Info.DirectoryPath + "\Report.LOL", Report, False)
         ieReport.Navigate(My.Application.Info.DirectoryPath + "\Report.LOL")
