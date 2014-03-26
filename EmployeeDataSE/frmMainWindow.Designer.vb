@@ -29,13 +29,15 @@ Partial Class frmMainWindow
         Me.tsmiWork = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiRegNewWorker = New System.Windows.Forms.ToolStripMenuItem()
         Me.KemasKiniToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiOption = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiChangePasswd = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.ssBar = New System.Windows.Forms.StatusStrip()
+        Me.tsslWelcome = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslAppVer = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tsslRAM = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TimerRAM = New System.Windows.Forms.Timer(Me.components)
-        Me.tsslAppVer = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tsslWelcome = New System.Windows.Forms.ToolStripStatusLabel()
         Me.menuBar.SuspendLayout()
         Me.ssBar.SuspendLayout()
         Me.SuspendLayout()
@@ -43,7 +45,7 @@ Partial Class frmMainWindow
         'menuBar
         '
         Me.menuBar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile, Me.tsmiWork, Me.tsmiHelp})
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiFile, Me.tsmiWork, Me.tsmiOption, Me.tsmiHelp})
         Me.menuBar.Location = New System.Drawing.Point(0, 0)
         Me.menuBar.Name = "menuBar"
         Me.menuBar.Size = New System.Drawing.Size(1016, 24)
@@ -85,6 +87,19 @@ Partial Class frmMainWindow
         Me.KemasKiniToolStripMenuItem.Size = New System.Drawing.Size(283, 22)
         Me.KemasKiniToolStripMenuItem.Text = "&Kemaskini dan Laporan Profil Pekerja"
         '
+        'tsmiOption
+        '
+        Me.tsmiOption.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangePasswd})
+        Me.tsmiOption.Name = "tsmiOption"
+        Me.tsmiOption.Size = New System.Drawing.Size(56, 20)
+        Me.tsmiOption.Text = "&Opsyen"
+        '
+        'tsmiChangePasswd
+        '
+        Me.tsmiChangePasswd.Name = "tsmiChangePasswd"
+        Me.tsmiChangePasswd.Size = New System.Drawing.Size(153, 22)
+        Me.tsmiChangePasswd.Text = "&Tukar katalaluan"
+        '
         'tsmiHelp
         '
         Me.tsmiHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAbout})
@@ -109,6 +124,20 @@ Partial Class frmMainWindow
         Me.ssBar.TabIndex = 3
         Me.ssBar.Text = "StatusStrip1"
         '
+        'tsslWelcome
+        '
+        Me.tsslWelcome.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right
+        Me.tsslWelcome.Name = "tsslWelcome"
+        Me.tsslWelcome.Size = New System.Drawing.Size(107, 17)
+        Me.tsslWelcome.Text = "Welcome back user!"
+        '
+        'tsslAppVer
+        '
+        Me.tsslAppVer.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.tsslAppVer.Name = "tsslAppVer"
+        Me.tsslAppVer.Size = New System.Drawing.Size(65, 17)
+        Me.tsslAppVer.Text = "AppVersion"
+        '
         'tsslRAM
         '
         Me.tsslRAM.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
@@ -119,20 +148,6 @@ Partial Class frmMainWindow
         'TimerRAM
         '
         Me.TimerRAM.Enabled = True
-        '
-        'tsslAppVer
-        '
-        Me.tsslAppVer.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.tsslAppVer.Name = "tsslAppVer"
-        Me.tsslAppVer.Size = New System.Drawing.Size(65, 17)
-        Me.tsslAppVer.Text = "AppVersion"
-        '
-        'tsslWelcome
-        '
-        Me.tsslWelcome.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right
-        Me.tsslWelcome.Name = "tsslWelcome"
-        Me.tsslWelcome.Size = New System.Drawing.Size(107, 17)
-        Me.tsslWelcome.Text = "Welcome back user!"
         '
         'frmMainWindow
         '
@@ -171,5 +186,7 @@ Partial Class frmMainWindow
     Friend WithEvents TimerRAM As System.Windows.Forms.Timer
     Friend WithEvents tsslAppVer As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents tsslWelcome As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents tsmiOption As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiChangePasswd As System.Windows.Forms.ToolStripMenuItem
 
 End Class

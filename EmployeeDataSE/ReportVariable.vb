@@ -1,4 +1,8 @@
 ﻿Module ReportVariable
+    ' Login
+    Public UserID As String
+
+    ' UI
     Public UID As Integer = 1
     Public Choose As String = "Sila Pilih..."
     Public SID As String = ""
@@ -41,6 +45,7 @@
         frmEVProfileBasic.MdiParent = frmMainWindow
         frmEVProfileAdvance.MdiParent = frmMainWindow
         frmReport.MdiParent = frmMainWindow
+        frmPassword.MdiParent = frmMainWindow
     End Sub
 
 End Module

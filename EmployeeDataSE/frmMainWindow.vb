@@ -4,7 +4,7 @@
         Me.Text = My.Application.Info.Title + " (Ver.: " + My.Application.Info.Version.ToString + ")"
         Me.Icon = My.Resources.user
 
-        tsslWelcome.Text = "Welcome back " + frmLogin.txtUserName.Text + "!"
+        tsslWelcome.Text = "Welcome back " + Username + "!"
         tsslAppVer.Text = My.Application.Info.ProductName + " (Version: " + My.Application.Info.Version.ToString + ")"
 
         MakeMdiParent()
@@ -39,5 +39,9 @@
 
     Private Sub TimerRAM_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerRAM.Tick
         tsslRAM.Text = "Free physical RAM: " + Math.Round((My.Computer.Info.AvailablePhysicalMemory) / 1024 / 1024, 2).ToString + "MB"
+    End Sub
+
+    Private Sub tsmiChangePasswd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiChangePasswd.Click
+        frmPassword.Show()
     End Sub
 End Class

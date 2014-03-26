@@ -6,7 +6,9 @@
     End Sub
 
     Private Sub btnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLogin.Click
-        Dim cipherText As String = UserSql.ScalarQueryReturnPasswd(txtUserName.Text)
+        UserID = txtUserName.Text
+
+        Dim cipherText As String = UserSql.ScalarQueryReturnPasswd(UserID)
         Dim plainText As String = Nothing
         Dim password As String = txtPassWord.Text
         Dim wrapper As New Simple3Des(password)

@@ -47,18 +47,18 @@ Partial Class frmLogin
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(6, 115)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.Size = New System.Drawing.Size(22, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Username:"
+        Me.Label1.Text = "ID:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(6, 143)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Password:"
+        Me.Label2.Text = "Katalaluan:"
         '
         'txtUserName
         '
