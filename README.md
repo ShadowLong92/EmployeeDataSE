@@ -15,6 +15,10 @@ It's recommended to use Microsoft Visual Studio 2010 only.
 
 Open and start Build program by pressing F5 (debug mode)
 
+Default login is: root, 142536
+
+Change password, use 3DS encryption, thus password are irrecoverable. 
+
 
 Installation
 ============
